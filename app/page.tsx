@@ -91,6 +91,34 @@ export default function EarthAndOmForKidsHomepage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top,_#fff7ed,_#ecfeff_35%,_#f0fdf4_70%,_#fdf2f8_100%)] text-slate-800">
       <div className="relative">
+        <div className="pointer-events-none absolute inset-x-0 top-40 z-0 overflow-hidden">
+          <div className="mx-auto flex max-w-7xl justify-between px-6 md:px-10 lg:px-16">
+            <motion.div
+              animate={{ x: [0, 20, 0], y: [0, -10, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+              className="h-16 w-28 rounded-full bg-white/70 blur-sm shadow-[0_10px_30px_rgba(255,255,255,0.8)]"
+            />
+            <motion.div
+              animate={{ x: [0, -18, 0], y: [0, 10, 0] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+              className="mt-16 h-20 w-36 rounded-full bg-white/70 blur-sm shadow-[0_10px_30px_rgba(255,255,255,0.8)]"
+            />
+          </div>
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 top-40 z-0 overflow-hidden">
+          <div className="mx-auto flex max-w-7xl justify-between px-6 md:px-10 lg:px-16">
+            <motion.div
+              animate={{ x: [0, 20, 0], y: [0, -10, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+              className="h-16 w-28 rounded-full bg-white/70 blur-sm shadow-[0_10px_30px_rgba(255,255,255,0.8)]"
+            />
+            <motion.div
+              animate={{ x: [0, -18, 0], y: [0, 10, 0] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+              className="mt-16 h-20 w-36 rounded-full bg-white/70 blur-sm shadow-[0_10px_30px_rgba(255,255,255,0.8)]"
+            />
+          </div>
+        </div>
         <FloatingBlob className="left-6 top-24 h-40 w-40 bg-pink-200/70" />
         <FloatingBlob className="right-10 top-32 h-52 w-52 bg-sky-200/60" />
         <FloatingBlob className="left-1/3 top-[38rem] h-56 w-56 bg-yellow-200/50" />
@@ -110,6 +138,10 @@ export default function EarthAndOmForKidsHomepage() {
               <a href="#home" className="font-medium text-slate-600 transition hover:text-emerald-600">Home</a>
               <a href="#about" className="font-medium text-slate-600 transition hover:text-emerald-600">About</a>
               <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-600">Services</a>
+              <a href="#schools" className="font-medium text-slate-600 transition hover:text-emerald-600">Schools</a>
+              <a href="#booking" className="font-medium text-slate-600 transition hover:text-emerald-600">Book</a>
+              <a href="#schools" className="font-medium text-slate-600 transition hover:text-emerald-600">Schools</a>
+              <a href="#booking" className="font-medium text-slate-600 transition hover:text-emerald-600">Book</a>
               <a href="#contact" className="rounded-full bg-emerald-500 px-5 py-2.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5">Contact</a>
             </nav>
           </div>
@@ -178,6 +210,18 @@ export default function EarthAndOmForKidsHomepage() {
           </div>
         </section>
 
+        <div className="px-6 py-4 md:px-10 lg:px-16">
+          <div className="mx-auto flex max-w-7xl items-center justify-center">
+            <div className="h-4 w-full rounded-full bg-gradient-to-r from-pink-300 via-yellow-300 via-emerald-300 via-sky-300 to-purple-300 shadow-lg opacity-90" />
+          </div>
+        </div>
+
+        <div className="px-6 py-4 md:px-10 lg:px-16">
+          <div className="mx-auto flex max-w-7xl items-center justify-center">
+            <div className="h-4 w-full rounded-full bg-gradient-to-r from-pink-300 via-yellow-300 via-emerald-300 via-sky-300 to-purple-300 shadow-lg opacity-90" />
+          </div>
+        </div>
+
         <section className="px-6 py-10 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-white/60 bg-white/70 p-8 shadow-xl backdrop-blur-xl lg:p-10">
             <div className="grid gap-5 md:grid-cols-3">
@@ -230,6 +274,26 @@ export default function EarthAndOmForKidsHomepage() {
         </section>
 
         {/* FOR SCHOOLS SECTION */}
+        <div className="px-6 py-6 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+              className="h-5 rounded-full bg-[linear-gradient(90deg,#f9a8d4,#fde68a,#86efac,#7dd3fc,#c4b5fd,#f9a8d4)] bg-[length:200%_200%] shadow-md"
+            />
+          </div>
+        </div>
+
+        <div className="px-6 py-6 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+              className="h-5 rounded-full bg-[linear-gradient(90deg,#f9a8d4,#fde68a,#86efac,#7dd3fc,#c4b5fd,#f9a8d4)] bg-[length:200%_200%] shadow-md"
+            />
+          </div>
+        </div>
+
         <section id="schools" className="px-6 py-20 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
@@ -247,7 +311,7 @@ export default function EarthAndOmForKidsHomepage() {
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               <div className="rounded-[2rem] bg-white/85 p-6 shadow-lg ring-1 ring-white/60">
                 <div className="text-4xl">🧘</div>
-                <h3 className="mt-4 text-xl font-bold">In-Class Yoga</h3>
+                <h3 className="mt-4 text-xl font-bold">In‑Class Yoga</h3>
                 <p className="mt-2 text-sm text-slate-600">
                   Short yoga sessions that fit into the school day to improve focus and energy.
                 </p>
