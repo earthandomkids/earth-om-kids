@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { type FormEvent, type ReactNode, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Sparkles, Heart, Phone, Mail, MapPin, Star, Trees, Flower2, School, Sun, Moon } from 'lucide-react'
 
@@ -42,7 +42,13 @@ const footerLinks = {
   offerings: ['School Programs', 'After-School Yoga', 'Mindfulness Workshops', 'Community Events'],
 }
 
-function SectionBadge({ children, color = 'text-emerald-700 bg-white/80 ring-emerald-100' }) {
+function SectionBadge({
+  children,
+  color = 'text-emerald-700 bg-white/80 ring-emerald-100',
+}: {
+  children: ReactNode
+  color?: string
+}) {
   return (
     <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm ring-1 ${color}`}>
       <Sparkles className="h-4 w-4" />
@@ -51,7 +57,7 @@ function SectionBadge({ children, color = 'text-emerald-700 bg-white/80 ring-eme
   )
 }
 
-function FloatingBlob({ className }) {
+function FloatingBlob({ className }: { className: string }) {
   return <div className={`absolute rounded-full blur-3xl opacity-70 ${className}`} />
 }
 
@@ -59,7 +65,7 @@ export default function EarthAndOmForKidsHomepage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('idle')
@@ -82,12 +88,13 @@ export default function EarthAndOmForKidsHomepage() {
       } else {
         setSubmitStatus('error')
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
     }
   }
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top,_#fff7ed,_#ecfeff_35%,_#f0fdf4_70%,_#fdf2f8_100%)] text-slate-800">
       <div className="relative">
@@ -107,10 +114,21 @@ export default function EarthAndOmForKidsHomepage() {
               </div>
             </a>
             <nav className="hidden items-center gap-8 md:flex">
-              <a href="#home" className="font-medium text-slate-600 transition hover:text-emerald-600">Home</a>
-              <a href="#about" className="font-medium text-slate-600 transition hover:text-emerald-600">About</a>
-              <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-600">Services</a>
-              <a href="#contact" className="rounded-full bg-emerald-500 px-5 py-2.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5">Contact</a>
+              <a href="#home" className="font-medium text-slate-600 transition hover:text-emerald-600">
+                Home
+              </a>
+              <a href="#about" className="font-medium text-slate-600 transition hover:text-emerald-600">
+                About
+              </a>
+              <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-600">
+                Services
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full bg-emerald-500 px-5 py-2.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5"
+              >
+                Contact
+              </a>
             </nav>
           </div>
         </header>
@@ -123,14 +141,21 @@ export default function EarthAndOmForKidsHomepage() {
                 Calm bodies, happy hearts, and confident kids.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-                Earth &amp; OM for Kids brings joyful yoga, movement, and mindfulness programs to schools,
-                families, camps, and community spaces. Our classes are playful, nurturing, and designed to help children feel grounded, strong, and inspired.
+                Earth &amp; OM for Kids brings joyful yoga, movement, and mindfulness programs to schools, families, camps,
+                and community spaces. Our classes are playful, nurturing, and designed to help children feel grounded,
+                strong, and inspired.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="#contact" className="rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-7 py-3.5 text-base font-semibold text-white shadow-xl transition hover:-translate-y-0.5">
+                <a
+                  href="#contact"
+                  className="rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-7 py-3.5 text-base font-semibold text-white shadow-xl transition hover:-translate-y-0.5"
+                >
                   Book a Class
                 </a>
-                <a href="#services" className="rounded-full bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5">
+                <a
+                  href="#services"
+                  className="rounded-full bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5"
+                >
                   Explore Services
                 </a>
               </div>
@@ -142,7 +167,10 @@ export default function EarthAndOmForKidsHomepage() {
                 ].map((item) => {
                   const Icon = item.icon
                   return (
-                    <div key={item.title} className="rounded-[1.75rem] bg-white/85 p-5 shadow-lg ring-1 ring-white/60 backdrop-blur-sm">
+                    <div
+                      key={item.title}
+                      className="rounded-[1.75rem] bg-white/85 p-5 shadow-lg ring-1 ring-white/60 backdrop-blur-sm"
+                    >
                       <Icon className="h-7 w-7 text-emerald-600" />
                       <h3 className="mt-3 text-lg font-bold">{item.title}</h3>
                       <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
@@ -152,7 +180,12 @@ export default function EarthAndOmForKidsHomepage() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }} className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="relative"
+            >
               <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-pink-200 blur-2xl" />
               <div className="absolute -right-6 bottom-10 h-28 w-28 rounded-full bg-yellow-200 blur-2xl" />
               <div className="relative rounded-[2.5rem] border border-white/70 bg-white/75 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl md:p-8">
@@ -160,17 +193,24 @@ export default function EarthAndOmForKidsHomepage() {
                   <div className="rounded-[2rem] bg-gradient-to-br from-emerald-100 to-green-50 p-6 shadow-sm">
                     <div className="text-4xl">🧘‍♀️</div>
                     <h3 className="mt-4 text-xl font-bold">For Schools</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">Beautifully structured yoga sessions that support wellness, focus, and classroom calm.</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      Beautifully structured yoga sessions that support wellness, focus, and classroom calm.
+                    </p>
                   </div>
                   <div className="rounded-[2rem] bg-gradient-to-br from-sky-100 to-cyan-50 p-6 shadow-sm">
                     <div className="text-4xl">🌈</div>
                     <h3 className="mt-4 text-xl font-bold">For Families</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">Gentle, fun, and imaginative classes that help children move, breathe, and shine.</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      Gentle, fun, and imaginative classes that help children move, breathe, and shine.
+                    </p>
                   </div>
                   <div className="rounded-[2rem] bg-gradient-to-br from-yellow-100 to-orange-50 p-6 shadow-sm sm:col-span-2">
                     <div className="text-4xl">✨</div>
                     <h3 className="mt-4 text-xl font-bold">A magical first impression</h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">Designed with cheerful colors, rounded cards, soft light, and a premium child-friendly feel so your visitors instantly feel wonder, trust, and warmth.</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">
+                      Designed with cheerful colors, rounded cards, soft light, and a premium child-friendly feel so
+                      your visitors instantly feel wonder, trust, and warmth.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -186,7 +226,10 @@ export default function EarthAndOmForKidsHomepage() {
                 'Child-friendly, calming, and fun',
                 'Custom programs for your community',
               ].map((item) => (
-                <div key={item} className="rounded-[1.5rem] bg-gradient-to-r from-white to-emerald-50 p-5 text-center font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
+                <div
+                  key={item}
+                  className="rounded-[1.5rem] bg-gradient-to-r from-white to-emerald-50 p-5 text-center font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100"
+                >
                   {item}
                 </div>
               ))}
@@ -202,10 +245,13 @@ export default function EarthAndOmForKidsHomepage() {
                   <SectionBadge color="text-sky-700 bg-sky-50 ring-sky-100">About Earth &amp; OM for Kids</SectionBadge>
                   <h2 className="mt-5 text-4xl font-black tracking-tight">A calm, playful, and heart-centered approach</h2>
                   <p className="mt-5 leading-8 text-slate-600">
-                    Earth &amp; OM for Kids was created to help children feel grounded, confident, joyful, and connected. Through yoga, movement, breathing exercises, and mindfulness, each class supports the whole child in a way that feels safe, age-appropriate, and fun.
+                    Earth &amp; OM for Kids was created to help children feel grounded, confident, joyful, and connected.
+                    Through yoga, movement, breathing exercises, and mindfulness, each class supports the whole child in a
+                    way that feels safe, age-appropriate, and fun.
                   </p>
                   <p className="mt-4 leading-8 text-slate-600">
-                    Whether working with schools, families, or community groups, every session is thoughtfully designed to encourage self-awareness, healthy movement, emotional balance, and imagination.
+                    Whether working with schools, families, or community groups, every session is thoughtfully designed to
+                    encourage self-awareness, healthy movement, emotional balance, and imagination.
                   </p>
                 </div>
               </div>
@@ -233,9 +279,12 @@ export default function EarthAndOmForKidsHomepage() {
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
               <SectionBadge color="text-emerald-700 bg-emerald-50 ring-emerald-100">Services</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Beautiful offerings for schools, families, and communities</h2>
+              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+                Beautiful offerings for schools, families, and communities
+              </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Every offering is designed to feel joyful, nurturing, and professionally delivered — so children feel comfortable, and schools or families feel confident in partnering with you.
+                Every offering is designed to feel joyful, nurturing, and professionally delivered — so children feel
+                comfortable, and schools or families feel confident in partnering with you.
               </p>
             </div>
 
@@ -255,7 +304,10 @@ export default function EarthAndOmForKidsHomepage() {
                     <p className="mt-4 leading-7 text-slate-600">{service.text}</p>
                     <div className="mt-6 space-y-3">
                       {service.points.map((point) => (
-                        <div key={point} className="flex items-center gap-3 rounded-full bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-100">
+                        <div
+                          key={point}
+                          className="flex items-center gap-3 rounded-full bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-100"
+                        >
                           <Star className="h-4 w-4 fill-current text-yellow-500" />
                           {point}
                         </div>
@@ -272,12 +324,17 @@ export default function EarthAndOmForKidsHomepage() {
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 p-10 text-white shadow-[0_30px_80px_rgba(16,24,40,0.18)] lg:p-14">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <h2 className="text-3xl font-black tracking-tight md:text-4xl">Ready to bring yoga to your school or community?</h2>
+                <h2 className="text-3xl font-black tracking-tight md:text-4xl">
+                  Ready to bring yoga to your school or community?
+                </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-8 text-white/90">
                   Let’s create a beautiful program that helps children move, breathe, focus, and grow with confidence.
                 </p>
               </div>
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-emerald-700 shadow-xl transition hover:-translate-y-0.5">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-emerald-700 shadow-xl transition hover:-translate-y-0.5"
+              >
                 Get in Touch
               </a>
             </div>
@@ -312,7 +369,9 @@ export default function EarthAndOmForKidsHomepage() {
                     <MapPin className="mt-1 h-5 w-5 text-emerald-600" />
                     <div>
                       <div className="font-bold">Service Area</div>
-                      <div className="text-slate-600">Schools, families, camps, and community spaces in your local area</div>
+                      <div className="text-slate-600">
+                        Schools, families, camps, and community spaces in your local area
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -322,31 +381,58 @@ export default function EarthAndOmForKidsHomepage() {
                 <form onSubmit={handleSubmit} className="grid gap-5 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">Full Name</label>
-                    <input name="name" className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white" placeholder="Your name" />
+                    <input
+                      name="name"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white"
+                      placeholder="Your name"
+                    />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">Email Address</label>
-                    <input name="email" type="email" className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white" placeholder="you@example.com" />
+                    <input
+                      name="email"
+                      type="email"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white"
+                      placeholder="you@example.com"
+                    />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">Phone Number</label>
-                    <input name="phone" className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white" placeholder="(000) 000-0000" />
+                    <input
+                      name="phone"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white"
+                      placeholder="(000) 000-0000"
+                    />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">Service Needed</label>
-                    <input name="service" className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white" placeholder="School yoga, workshop, event..." />
+                    <input
+                      name="service"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white"
+                      placeholder="School yoga, workshop, event..."
+                    />
                   </div>
                   <div className="md:col-span-2">
                     <label className="mb-2 block text-sm font-semibold text-slate-700">Message</label>
-                    <textarea name="message" rows={5} className="w-full rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white" placeholder="Tell us about your school, event, or what you’re looking for..." />
+                    <textarea
+                      name="message"
+                      rows={5}
+                      className="w-full rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-emerald-400 focus:bg-white"
+                      placeholder="Tell us about your school, event, or what you’re looking for..."
+                    />
                   </div>
 
                   <div className="md:col-span-2">
-                    <button type="submit" disabled={isSubmitting} className="mt-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-7 py-3.5 font-bold text-white shadow-xl transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="mt-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-7 py-3.5 font-bold text-white shadow-xl transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+                    >
                       {isSubmitting ? 'Sending...' : 'Send Inquiry'}
                     </button>
                   </div>
-                                  {submitStatus === 'success' && (
+
+                  {submitStatus === 'success' && (
                     <div className="md:col-span-2 rounded-[1.5rem] border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-800">
                       Thank you! Your message was sent successfully. We’ll get back to you soon.
                     </div>
@@ -386,7 +472,9 @@ export default function EarthAndOmForKidsHomepage() {
                 <ul className="mt-4 space-y-3">
                   {footerLinks.pages.map((item) => (
                     <li key={item}>
-                      <a href={`#${item.toLowerCase()}`} className="text-slate-400 transition hover:text-white">{item}</a>
+                      <a href={`#${item.toLowerCase()}`} className="text-slate-400 transition hover:text-white">
+                        {item}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -396,7 +484,9 @@ export default function EarthAndOmForKidsHomepage() {
                 <h3 className="text-lg font-bold text-white">Services</h3>
                 <ul className="mt-4 space-y-3">
                   {footerLinks.offerings.map((item) => (
-                    <li key={item} className="text-slate-400">{item}</li>
+                    <li key={item} className="text-slate-400">
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </div>
