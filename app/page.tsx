@@ -247,7 +247,7 @@ export default function EarthAndOmForKidsHomepage() {
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               <div className="rounded-[2rem] bg-white/85 p-6 shadow-lg ring-1 ring-white/60">
                 <div className="text-4xl">🧘</div>
-                <h3 className="mt-4 text-xl font-bold">In‑Class Yoga</h3>
+                <h3 className="mt-4 text-xl font-bold">In-Class Yoga</h3>
                 <p className="mt-2 text-sm text-slate-600">
                   Short yoga sessions that fit into the school day to improve focus and energy.
                 </p>
@@ -369,6 +369,83 @@ export default function EarthAndOmForKidsHomepage() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="booking" className="px-6 py-20 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] border border-white/70 bg-white/80 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl lg:p-12">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+              <div>
+                <SectionBadge color="text-rose-700 bg-rose-50 ring-rose-100">Book a Free Consultation</SectionBadge>
+                <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+                  Make it easy for schools to book you instantly
+                </h2>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+                  Offer a free consultation call or trial discussion so schools can quickly learn about your program and choose the best fit. This is one of the strongest ways to turn visitors into real bookings.
+                </p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {[
+                    'Free 15-minute consultation',
+                    'Perfect for schools and organizers',
+                    'Quick and professional first step',
+                    'Easy scheduling from any device',
+                  ].map((item) => (
+                    <div key={item} className="rounded-[1.5rem] bg-slate-50 px-5 py-4 text-sm font-semibold text-slate-700 ring-1 ring-slate-100">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="https://calendly.com/your-calendly-link"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-7 py-3.5 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5"
+                  >
+                    Book Free Consultation
+                  </a>
+                  <a
+                    href="#contact"
+                    className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-slate-700 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5"
+                  >
+                    Ask a Question
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-[2.2rem] bg-gradient-to-br from-pink-100 via-rose-50 to-orange-50 p-6 shadow-inner ring-1 ring-white/80 lg:p-8">
+                <div className="rounded-[1.8rem] bg-white p-6 shadow-lg ring-1 ring-slate-100">
+                  <div className="mb-4 flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">Booking Preview</div>
+                      <div className="mt-1 text-2xl font-black text-slate-800">Free School Consultation</div>
+                    </div>
+                    <div className="text-3xl">📅</div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="rounded-[1.25rem] bg-slate-50 p-4 ring-1 ring-slate-100">
+                      <div className="text-sm font-semibold text-slate-500">Session length</div>
+                      <div className="mt-1 text-lg font-bold text-slate-800">15 minutes</div>
+                    </div>
+                    <div className="rounded-[1.25rem] bg-slate-50 p-4 ring-1 ring-slate-100">
+                      <div className="text-sm font-semibold text-slate-500">Best for</div>
+                      <div className="mt-1 text-lg font-bold text-slate-800">Schools, camps, and family programs</div>
+                    </div>
+                    <div className="rounded-[1.25rem] bg-slate-50 p-4 ring-1 ring-slate-100">
+                      <div className="text-sm font-semibold text-slate-500">What you’ll discuss</div>
+                      <div className="mt-1 text-lg font-bold text-slate-800">Program goals, age groups, schedule, and pricing</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 rounded-[1.25rem] border border-dashed border-rose-200 bg-rose-50 px-4 py-5 text-sm leading-7 text-slate-600">
+                    Replace the Calendly link above with your real booking link later, and this section will become your instant booking tool.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
