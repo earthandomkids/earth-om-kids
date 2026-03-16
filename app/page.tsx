@@ -39,25 +39,31 @@ const benefits = [
 
 const galleryImages = [
   {
-    image: 'https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    title: 'Calm Classroom Yoga',
-    text: 'Gentle poses and mindful breathing for school wellness sessions.',
-  },
-  {
-    image: 'https://images.pexels.com/photos/4498606/pexels-photo-4498606.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    title: 'Playful Movement Time',
-    text: 'Fun, imaginative yoga activities that keep children engaged.',
+    image: 'https://images.pexels.com/photos/8613091/pexels-photo-8613091.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    title: 'Kids Yoga Circle',
+    text: 'A playful group yoga moment designed for children.',
   },
   {
     image: 'https://images.pexels.com/photos/8613311/pexels-photo-8613311.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    title: 'Mindful Nature Moments',
-    text: 'Relaxing, grounding practices inspired by nature and calm energy.',
+    title: 'Mindful Breathing Time',
+    text: 'Simple breathing and calm activities for young learners.',
   },
   {
-    image: 'https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    title: 'Confidence Building',
-    text: 'Supportive movement experiences that help children feel strong and proud.',
+    image: 'https://images.pexels.com/photos/4498606/pexels-photo-4498606.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    title: 'Kids Yoga Practice',
+    text: 'Children learning simple yoga poses together.',
   },
+  {
+    image: 'https://images.pexels.com/photos/8436589/pexels-photo-8436589.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    title: 'Creative Kids Yoga',
+    text: 'Imaginative, child-friendly yoga sessions full of joy.',
+  },
+]
+
+const yogaCharacters = [
+  { emoji: '🌈', title: 'Rainbow Breath', text: 'Big breaths, bright energy, and calm little minds.' },
+  { emoji: '🦁', title: 'Lion Power', text: 'Confidence-building movement that helps kids feel brave.' },
+  { emoji: '🦋', title: 'Butterfly Calm', text: 'Gentle stretching, softness, and peaceful rest.' },
 ]
 
 const footerLinks = {
@@ -237,6 +243,78 @@ export default function EarthAndOmForKidsHomepage() {
           </div>
         </section>
 
+        <section className="px-6 py-16 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <SectionBadge color="text-emerald-700 bg-emerald-50 ring-emerald-100">What is Kids Yoga?</SectionBadge>
+              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Movement, mindfulness, and fun made just for children</h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+                Kids yoga blends movement, breathing, imagination, and mindfulness into a playful experience that helps children feel calm, strong, and confident.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              <motion.div whileHover={{ y: -6 }} className="rounded-[2rem] bg-gradient-to-br from-yellow-100 to-orange-50 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/70 text-3xl shadow-sm">🎯</div>
+                <h3 className="mt-6 text-2xl font-black text-orange-600">Made for Children</h3>
+                <p className="mt-4 text-lg leading-8 text-slate-700">
+                  Our classes are designed for kids ages 3–12 with games, stories, music, breathing, and playful movement that keeps children engaged.
+                </p>
+              </motion.div>
+
+              <motion.div whileHover={{ y: -6 }} className="rounded-[2rem] bg-gradient-to-br from-sky-100 to-cyan-50 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/70 text-3xl shadow-sm">🧘</div>
+                <h3 className="mt-6 text-2xl font-black text-blue-600">Why Earth &amp; OM?</h3>
+                <ul className="mt-4 space-y-3 text-lg leading-8 text-slate-700">
+                  <li>🌟 Safe and nurturing environment</li>
+                  <li>🎨 Creative classes with movement and play</li>
+                  <li>❤️ Confidence and self-awareness focus</li>
+                  <li>🌈 Inclusive for every child</li>
+                </ul>
+              </motion.div>
+
+              <motion.div whileHover={{ y: -6 }} className="rounded-[2rem] bg-gradient-to-br from-emerald-100 to-teal-50 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/70 text-3xl shadow-sm">🌱</div>
+                <h3 className="mt-6 text-2xl font-black text-emerald-600">Grow &amp; Learn</h3>
+                <p className="mt-4 text-lg leading-8 text-slate-700">
+                  Children learn breathing techniques, animal and nature-inspired poses, and mindfulness practices that support focus, calm, and everyday well-being.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <div className="px-6 py-4 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+              className="h-5 rounded-full bg-[linear-gradient(90deg,#f9a8d4,#fde68a,#86efac,#7dd3fc,#c4b5fd,#f9a8d4)] bg-[length:200%_200%] shadow-md"
+            />
+          </div>
+        </div>
+
+        <section className="px-6 py-16 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl text-center">
+            <SectionBadge color="text-fuchsia-700 bg-fuchsia-50 ring-fuchsia-100">Yoga Friends</SectionBadge>
+            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Cute yoga characters kids will love</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+              Playful little character cards make the website feel warm, imaginative, and more memorable for families and schools.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {yogaCharacters.map((item) => (
+                <motion.div key={item.title} whileHover={{ y: -8, rotate: -1 }} className="rounded-[2rem] bg-white/85 p-7 text-center shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 via-yellow-100 to-sky-100 text-5xl shadow-md">
+                    {item.emoji}
+                  </div>
+                  <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-800">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="about" className="px-6 py-20 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
@@ -313,6 +391,67 @@ export default function EarthAndOmForKidsHomepage() {
                 Request School Program
               </a>
             </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-16 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl text-center">
+            <SectionBadge color="text-green-700 bg-green-50 ring-green-100">Benefits of Kids Yoga</SectionBadge>
+            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Yoga helps children grow in so many wonderful ways</h2>
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {[
+                { emoji: '💪', title: 'Physical Health', text: 'Builds strength, flexibility, balance, and coordination.' },
+                { emoji: '🧠', title: 'Mental Focus', text: 'Improves concentration, attention span, and classroom readiness.' },
+                { emoji: '😊', title: 'Emotional Balance', text: 'Helps children manage stress, feelings, and confidence.' },
+                { emoji: '⚡', title: 'Energy & Calm', text: 'Teaches kids how to energize or relax when needed.' },
+                { emoji: '🎨', title: 'Creativity', text: 'Encourages imagination through storytelling and movement.' },
+                { emoji: '⭐', title: 'Self-Esteem', text: 'Supports body awareness, confidence, and pride.' },
+              ].map((item) => (
+                <div key={item.title} className="rounded-[2rem] bg-white/85 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70">
+                  <div className="text-5xl">{item.emoji}</div>
+                  <h3 className="mt-5 text-2xl font-black text-slate-800">{item.title}</h3>
+                  <p className="mt-4 text-lg leading-8 text-slate-600">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-16 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl text-center">
+            <SectionBadge color="text-amber-700 bg-amber-50 ring-amber-100">Age Groups</SectionBadge>
+            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Programs designed for different stages of childhood</h2>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {[
+                { emoji: '🐣', title: 'Little Yogis', ages: 'Ages 3-5', text: 'Playful introduction to yoga through stories, songs, and simple poses.', bg: 'from-pink-100 to-rose-50', time: '30 minutes' },
+                { emoji: '🌻', title: 'Growing Yogis', ages: 'Ages 6-8', text: 'Fun sequences with animal poses, breathing games, and relaxation.', bg: 'from-yellow-100 to-amber-50', time: '45 minutes' },
+                { emoji: '🦁', title: 'Young Warriors', ages: 'Ages 9-12', text: 'More advanced poses, confidence work, and mindfulness practices.', bg: 'from-orange-100 to-rose-50', time: '60 minutes' },
+                { emoji: '👨‍👩‍👧', title: 'Family Yoga', ages: 'All Ages', text: 'Parents and children practicing together for bonding and fun.', bg: 'from-emerald-100 to-teal-50', time: '45 minutes' },
+              ].map((item) => (
+                <div key={item.title} className={`rounded-[2rem] bg-gradient-to-br ${item.bg} p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70`}>
+                  <div className="text-center">
+                    <div className="text-5xl">{item.emoji}</div>
+                    <h3 className="mt-4 text-3xl font-black text-slate-800">{item.title}</h3>
+                    <div className="mt-2 text-xl font-bold text-slate-700">{item.ages}</div>
+                    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-700">{item.text}</p>
+                    <div className="mt-6 flex items-center justify-center gap-8 text-base font-semibold text-slate-700">
+                      <span>🕒 {item.time}</span>
+                      <span>👥 Small Groups</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-10 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-gradient-to-r from-emerald-400 to-cyan-400 px-10 py-14 text-center text-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
+            <div className="text-5xl">🌈</div>
+            <h2 className="mt-4 text-4xl font-black md:text-5xl">Every Child Can Do Yoga!</h2>
+            <p className="mx-auto mt-5 max-w-4xl text-2xl leading-10 text-white/95">
+              Our classes are designed to meet each child where they are. No experience needed, just a positive attitude and a ready-to-move body.
+            </p>
           </div>
         </section>
 
@@ -443,7 +582,6 @@ export default function EarthAndOmForKidsHomepage() {
                       <div className="mt-1 text-lg font-bold text-slate-800">Program goals, age groups, schedule, and pricing</div>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -454,27 +592,23 @@ export default function EarthAndOmForKidsHomepage() {
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
               <SectionBadge color="text-sky-700 bg-sky-50 ring-sky-100">Gallery</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">A bright, animated gallery preview</h2>
+              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">A joyful kids yoga gallery</h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Replace these with your real photos later. For now, this section helps your site feel rich, lively, and visually impressive.
+                These child-friendly photos give your website a warmer and more believable school-ready feel.
               </p>
             </div>
-            <div className="mt-12 overflow-hidden rounded-[2.5rem]">
-              <motion.div animate={{ x: ['0%', '-50%'] }} transition={{ duration: 24, repeat: Infinity, ease: 'linear' }} className="flex gap-6">
-                {[...galleryImages, ...galleryImages].map((item, index) => (
-                  <div key={`${item.title}-${index}`} className={`min-w-[300px] rounded-[2rem] bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.10)] ring-1 ring-white/70 md:min-w-[360px]`}>
-                    <div className="overflow-hidden rounded-[1.5rem] shadow-inner">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="h-44 w-full object-cover"
-                      />
-                    </div>
-                    <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-800">{item.title}</h3>
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {galleryImages.map((item) => (
+                <motion.div key={item.title} whileHover={{ y: -6 }} className="overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.10)] ring-1 ring-white/70">
+                  <div className="overflow-hidden">
+                    <img src={item.image} alt={item.title} className="h-64 w-full object-cover transition duration-500 hover:scale-105" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-black tracking-tight text-slate-800">{item.title}</h3>
                     <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
                   </div>
-                ))}
-              </motion.div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -583,6 +717,7 @@ export default function EarthAndOmForKidsHomepage() {
                 </div>
                 <p className="mt-5 max-w-md leading-7 text-slate-400">Creating beautiful, playful, and calming yoga experiences for kids in schools, homes, and communities.</p>
               </div>
+
               <div>
                 <h3 className="text-lg font-bold text-white">Pages</h3>
                 <ul className="mt-4 space-y-3">
@@ -593,6 +728,7 @@ export default function EarthAndOmForKidsHomepage() {
                   ))}
                 </ul>
               </div>
+
               <div>
                 <h3 className="text-lg font-bold text-white">Services</h3>
                 <ul className="mt-4 space-y-3">
@@ -602,6 +738,7 @@ export default function EarthAndOmForKidsHomepage() {
                 </ul>
               </div>
             </div>
+
             <div className="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500">© 2026 Earth &amp; OM for Kids. All rights reserved.</div>
           </div>
         </footer>
