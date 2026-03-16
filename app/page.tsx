@@ -411,7 +411,7 @@ export default function EarthAndOmForKidsHomepage() {
                   ))}
                 </div>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <a href="https://calendly.com/your-calendly-link" target="_blank" rel="noreferrer" className="rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-7 py-3.5 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5">
+                  <a href="#contact" className="rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-7 py-3.5 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5">
                     Book Free Consultation
                   </a>
                   <a href="#contact" className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-slate-700 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5">
@@ -443,9 +443,7 @@ export default function EarthAndOmForKidsHomepage() {
                       <div className="mt-1 text-lg font-bold text-slate-800">Program goals, age groups, schedule, and pricing</div>
                     </div>
                   </div>
-                  <div className="mt-6 rounded-[1.25rem] border border-dashed border-rose-200 bg-rose-50 px-4 py-5 text-sm leading-7 text-slate-600">
-                    Replace the Calendly link above with your real booking link later, and this section will become your instant booking tool.
-                  </div>
+                  
                 </div>
               </div>
             </div>
