@@ -2,7 +2,19 @@
 
 import { type FormEvent, type ReactNode, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, Heart, Phone, Mail, MapPin, Star, Trees, Flower2, School, Sun, Moon } from 'lucide-react'
+import {
+  Sparkles,
+  Heart,
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  Trees,
+  Flower2,
+  School,
+  Sun,
+  Moon,
+} from 'lucide-react'
 
 const services = [
   {
@@ -96,9 +108,10 @@ function FloatingBlob({ className }: { className: string }) {
   return <div className={`absolute rounded-full blur-3xl opacity-70 ${className}`} />
 }
 
-export default function EarthAndOmForKidsHomepage() {
+export default function EarthAndOmKidsHomepage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -159,10 +172,11 @@ export default function EarthAndOmForKidsHomepage() {
                 <Flower2 className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-lg font-extrabold tracking-tight">Earth &amp; OM for Kids</div>
+                <div className="text-lg font-extrabold tracking-tight">Earth &amp; OM Kids</div>
                 <div className="text-xs font-medium text-slate-500">Kids Yoga • Mindfulness • School Programs</div>
               </div>
             </a>
+
             <nav className="hidden items-center gap-8 md:flex">
               <a href="#home" className="font-medium text-slate-600 transition hover:text-emerald-600">
                 Home
@@ -189,7 +203,52 @@ export default function EarthAndOmForKidsHomepage() {
                 Contact
               </a>
             </nav>
+
+            <button
+              type="button"
+              aria-label="Toggle menu"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-md ring-1 ring-slate-200 md:hidden"
+            >
+              <div className="space-y-1.5">
+                <span className="block h-0.5 w-5 rounded-full bg-slate-700" />
+                <span className="block h-0.5 w-5 rounded-full bg-slate-700" />
+                <span className="block h-0.5 w-5 rounded-full bg-slate-700" />
+              </div>
+            </button>
           </div>
+
+          {mobileMenuOpen && (
+            <div className="border-t border-slate-200 bg-white/95 px-6 py-4 backdrop-blur md:hidden">
+              <div className="flex flex-col gap-4 text-base font-medium text-slate-700">
+                <a href="#home" onClick={() => setMobileMenuOpen(false)}>
+                  Home
+                </a>
+                <a href="#about" onClick={() => setMobileMenuOpen(false)}>
+                  About
+                </a>
+                <a href="#services" onClick={() => setMobileMenuOpen(false)}>
+                  Services
+                </a>
+                <a href="#schools" onClick={() => setMobileMenuOpen(false)}>
+                  Schools
+                </a>
+                <a href="#booking" onClick={() => setMobileMenuOpen(false)}>
+                  Book
+                </a>
+                <a href="#gallery" onClick={() => setMobileMenuOpen(false)}>
+                  Gallery
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-full bg-emerald-500 px-5 py-3 text-center font-semibold text-white"
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          )}
         </header>
 
         <section id="home" className="relative px-6 pb-20 pt-12 md:px-10 lg:px-16 lg:pb-28 lg:pt-16">
@@ -200,9 +259,9 @@ export default function EarthAndOmForKidsHomepage() {
                 Calm bodies, happy hearts, and confident kids.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-                Earth &amp; OM for Kids brings joyful yoga, movement, and mindfulness programs to schools, families,
-                camps, and community spaces. Our classes are playful, nurturing, and designed to help children feel
-                grounded, strong, and inspired.
+                Earth &amp; OM Kids brings joyful yoga, movement, and mindfulness programs to schools, families, camps,
+                and community spaces. Our classes are playful, nurturing, and designed to help children feel grounded,
+                strong, and inspired.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -323,8 +382,8 @@ export default function EarthAndOmForKidsHomepage() {
                 </div>
                 <h3 className="mt-6 text-2xl font-black text-orange-600">Made for Children</h3>
                 <p className="mt-4 text-lg leading-8 text-slate-700">
-                  Our classes are designed for kids ages 3–12 with games, stories, music, breathing, and playful
-                  movement that keeps children engaged.
+                  Our classes are designed for kids ages 18 months and up with songs, games, stories, breathing, and
+                  playful movement that keeps children engaged.
                 </p>
               </motion.div>
 
@@ -399,36 +458,23 @@ export default function EarthAndOmForKidsHomepage() {
 
         <section id="about" className="px-6 py-20 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
-            <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
               <div className="rounded-[2.5rem] bg-gradient-to-br from-emerald-200 via-teal-100 to-sky-100 p-8 shadow-[0_20px_60px_rgba(16,24,40,0.12)] lg:p-10">
                 <div className="rounded-[2rem] bg-white/85 p-8 shadow-lg backdrop-blur-sm">
-                  <SectionBadge color="text-sky-700 bg-sky-50 ring-sky-100">About Earth &amp; OM for Kids</SectionBadge>
+                  <SectionBadge color="text-sky-700 bg-sky-50 ring-sky-100">About Earth &amp; OM Kids</SectionBadge>
                   <h2 className="mt-5 text-4xl font-black tracking-tight">A calm, playful, and heart-centered approach</h2>
                   <p className="mt-5 leading-8 text-slate-600">
-                    Earth &amp; OM for Kids was created to help children feel grounded, confident, joyful, and
-                    connected. Through yoga, movement, breathing exercises, and mindfulness, each class supports the
-                    whole child in a way that feels safe, age-appropriate, and fun.
+                    Earth &amp; OM Kids helps children feel grounded, confident, joyful, and connected through yoga,
+                    movement, breathing, mindfulness, and play.
                   </p>
                   <p className="mt-4 leading-8 text-slate-600">
-                    Led by Taranbir Kaur, every session is thoughtfully designed to encourage self-awareness, healthy
-                    movement, emotional balance, and imagination for schools, families, and community groups.
+                    Led by Taran Kaur, an Early Childhood Educator with nearly 10 years of experience, each session is
+                    designed to support children’s physical, emotional, and social well-being in a safe,
+                    age-appropriate, and engaging way.
                   </p>
                   <p className="mt-4 leading-8 text-slate-600">
-                    Taranbir Kaur is an Early Childhood Educator with nearly 10 years of experience working with young
-                    children. With a strong background in child development, she creates engaging yoga and mindfulness
-                    sessions that support children’s physical, emotional, and social well-being through movement,
-                    breathing, relaxation, and play.
-                  </p>
-                  <p className="mt-4 leading-8 text-slate-600">
-                    In addition to children’s programming, Taran also offers wellness workshops for educators, staff
-                    teams, and community groups. These sessions focus on stress relief, mindful movement, breathwork,
-                    and relaxation techniques to support overall well-being and help educators reconnect with themselves
-                    while caring for others.
-                  </p>
-                  <p className="mt-4 leading-8 text-slate-600">
-                    Her programs are designed for schools, childcare centres, families, and community organizations,
-                    creating nurturing spaces for both children and adults to slow down, move mindfully, and build
-                    healthy habits for life.
+                    Taran also offers wellness workshops for educators, staff teams, and community groups focused on
+                    stress relief, mindful movement, breathwork, and relaxation.
                   </p>
                 </div>
               </div>
@@ -551,36 +597,36 @@ export default function EarthAndOmForKidsHomepage() {
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               {[
                 {
+                  emoji: '🧸',
+                  title: 'Toddler Yoga',
+                  ages: '18 Months+',
+                  text: 'Gentle, playful movement with songs, sensory fun, and simple activities designed for toddlers.',
+                  bg: 'from-pink-100 to-rose-50',
+                  time: '30 minutes',
+                },
+                {
                   emoji: '🐣',
                   title: 'Little Yogis',
                   ages: 'Ages 3-5',
                   text: 'Playful introduction to yoga through stories, songs, and simple poses.',
-                  bg: 'from-pink-100 to-rose-50',
-                  time: '30 minutes',
+                  bg: 'from-yellow-100 to-amber-50',
+                  time: '45 minutes',
                 },
                 {
                   emoji: '🌻',
                   title: 'Growing Yogis',
                   ages: 'Ages 6-8',
                   text: 'Fun sequences with animal poses, breathing games, and relaxation.',
-                  bg: 'from-yellow-100 to-amber-50',
+                  bg: 'from-emerald-100 to-teal-50',
                   time: '45 minutes',
                 },
                 {
                   emoji: '🦁',
                   title: 'Young Warriors',
                   ages: 'Ages 9-12',
-                  text: 'More advanced poses, confidence work, and mindfulness practices.',
+                  text: 'More advanced poses, confidence work, mindfulness, and self-regulation practices.',
                   bg: 'from-orange-100 to-rose-50',
                   time: '60 minutes',
-                },
-                {
-                  emoji: '👨‍👩‍👧',
-                  title: 'Family Yoga',
-                  ages: 'All Ages',
-                  text: 'Parents and children practicing together for bonding and fun.',
-                  bg: 'from-emerald-100 to-teal-50',
-                  time: '45 minutes',
                 },
               ].map((item) => (
                 <div
@@ -680,7 +726,7 @@ export default function EarthAndOmForKidsHomepage() {
                 },
                 {
                   quote:
-                    'Earth & OM for Kids brought such a warm and positive energy into our school. The program was engaging, thoughtful, and beautifully delivered.',
+                    'Earth & OM Kids brought such a warm and positive energy into our school. The program was engaging, thoughtful, and beautifully delivered.',
                   name: 'School Principal',
                   org: 'Community School',
                 },
@@ -805,7 +851,11 @@ export default function EarthAndOmForKidsHomepage() {
                   className="overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
                 >
                   <div className="overflow-hidden">
-                    <img src={item.image} alt={item.title} className="h-64 w-full object-cover transition duration-500 hover:scale-105" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-64 w-full object-cover transition duration-500 hover:scale-105"
+                    />
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-black tracking-tight text-slate-800">{item.title}</h3>
@@ -868,7 +918,7 @@ export default function EarthAndOmForKidsHomepage() {
                     <MapPin className="mt-1 h-5 w-5 text-emerald-600" />
                     <div>
                       <div className="font-bold">Contact Person</div>
-                      <div className="text-slate-600">Taranbir Kaur</div>
+                      <div className="text-slate-600">Taran Kaur</div>
                     </div>
                   </div>
                 </div>
@@ -959,7 +1009,7 @@ export default function EarthAndOmForKidsHomepage() {
                     <Flower2 className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className="text-xl font-extrabold text-white">Earth &amp; OM for Kids</div>
+                    <div className="text-xl font-extrabold text-white">Earth &amp; OM Kids</div>
                     <div className="text-sm text-slate-400">Yoga, movement, and mindfulness for children</div>
                   </div>
                 </div>
@@ -994,7 +1044,7 @@ export default function EarthAndOmForKidsHomepage() {
             </div>
 
             <div className="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500">
-              © 2026 Earth &amp; OM for Kids. All rights reserved.
+              © 2026 Earth &amp; OM Kids. All rights reserved.
             </div>
           </div>
         </footer>
