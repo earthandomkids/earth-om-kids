@@ -325,21 +325,24 @@ export default function EarthAndOmKidsHomepage() {
           <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">
-                Refined yoga &amp; mindfulness experiences for children
+                Refined kids yoga & mindfulness programs
               </SectionBadge>
 
               <div className="mt-5 inline-flex rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
-                Trusted by schools, child care centres, and Montessori communities
+                Trusted by schools, childcare centres, and Montessori communities in Toronto
               </div>
 
-              <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight text-slate-900 sm:text-5xl md:text-6xl xl:text-7xl">
-                Calm minds, joyful movement, and confident children.
+  <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight text-slate-900 sm:text-5xl md:text-6xl xl:text-7xl">
+                Kids yoga &amp; Mindfulness, Programs for Schools in Toronto
               </h1>
+<h2 className="mt-4 text-lg font-semibold tracking-wide text-slate-600 md:text-xl">
+  Calm minds, joyful movement, and confident children.
+</h2>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg md:text-xl">
-                Earth &amp; OM Kids brings beautifully designed yoga and mindfulness experiences to schools,
-                childcare centres, and community spaces — helping children feel grounded, regulated, and inspired
-                through movement, breath, and play.
+                Earth &amp; OM Kids offers beautifully designed kids yoga and mindfulness programs
+  for schools, childcare centres, Montessori communities, and families across
+  Toronto and the GTA.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -390,7 +393,7 @@ export default function EarthAndOmKidsHomepage() {
               <div className="absolute -right-6 bottom-10 h-28 w-28 rounded-full bg-amber-100 blur-2xl" />
 
               <div className="relative rounded-[2.5rem] border border-white/80 bg-white/90 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-8">
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[1.08fr_0.92fr]">
                   <motion.div
                     whileHover={{ y: -6 }}
                     className="rounded-[2rem] bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm ring-1 ring-emerald-100"
@@ -418,10 +421,10 @@ export default function EarthAndOmKidsHomepage() {
                     className="rounded-[2rem] bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm ring-1 ring-amber-100 sm:col-span-2"
                   >
                     <div className="text-4xl">✨</div>
-                    <h3 className="mt-4 text-xl font-bold text-slate-900">A premium first impression</h3>
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">Designed for Real Classroom Impact</h3>
                     <p className="mt-2 text-sm leading-7 text-slate-600">
-                      A calm, elevated visual experience designed to feel trustworthy, professional, and beautiful to
-                      schools, families, and community partners.
+                      Our programs are thoughtfully created to support focus, emotional regulation,
+  and positive classroom behavior in real school environments.
                     </p>
                   </motion.div>
                 </div>
@@ -868,7 +871,7 @@ export default function EarthAndOmKidsHomepage() {
             <div className="text-center">
               <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">Services</SectionBadge>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
-                Beautiful offerings for schools, families, and communities
+                Kids Yoga & Mindfulness Programs for Schools and Childcare Centres in Toronto
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
                 Every offering is designed to feel joyful, nurturing, and professionally delivered — so children feel

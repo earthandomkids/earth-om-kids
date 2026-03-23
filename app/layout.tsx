@@ -49,15 +49,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Earth & OM Kids',
+              url: 'https://earthandom.ca',
+              email: 'earthandomkids@gmail.com',
+              telephone: '647-856-8206',
+              areaServed: ['Toronto', 'GTA'],
+              description:
+                'Earth & OM Kids offers kids yoga, mindfulness, school wellness programs, childcare yoga programs, and educator wellness workshops in Toronto and the GTA.',
+            }),
+          }}
+        />
       </body>
     </html>
   );
