@@ -2,7 +2,7 @@
 
 import { type FormEvent, type ReactNode, useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from "next/image";
+import Image from 'next/image'
 import {
   Sparkles,
   Heart,
@@ -11,7 +11,6 @@ import {
   MapPin,
   Star,
   Trees,
-  Flower2,
   School,
   Sun,
   Moon,
@@ -70,24 +69,6 @@ const galleryImages = [
     image: '/images/kids-yoga-4.png',
     title: 'Creative Kids Yoga',
     text: 'Imaginative, child-friendly yoga sessions full of joy.',
-  },
-]
-
-const yogaCharacters = [
-  {
-    emoji: '🧘‍♀️',
-    title: 'Mindful Movement',
-    text: 'Gentle yoga poses that build balance, strength, and awareness.',
-  },
-  {
-    emoji: '✨',
-    title: 'Confidence & Joy',
-    text: 'Playful sessions that help children feel happy, proud, and capable.',
-  },
-  {
-    emoji: '🌿',
-    title: 'Calm & Relaxation',
-    text: 'Simple breathing and relaxation practices that support emotional well-being.',
   },
 ]
 
@@ -226,13 +207,7 @@ export default function EarthAndOmKidsHomepage() {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-10 lg:px-16">
             <a href="#home" className="flex min-w-0 items-center gap-3">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-lg">
-                <Image
-    src="/yoga-icon.png"
-    alt="Yoga logo"
-    width={35}
-    height={30}
-    className="object-contain"
-  />
+                <Image src="/yoga-icon.png" alt="Yoga logo" width={35} height={30} className="object-contain" />
               </div>
               <div className="min-w-0">
                 <div className="truncate text-lg font-extrabold tracking-tight text-slate-900">Earth &amp; OM Kids</div>
@@ -249,17 +224,17 @@ export default function EarthAndOmKidsHomepage() {
               <a href="#about" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 About
               </a>
-              <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-700">
-                Services
-              </a>
               <a href="#schools" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Schools
               </a>
-              <a href="#booking" className="font-medium text-slate-600 transition hover:text-emerald-700">
-                Book
+              <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-700">
+                Services
               </a>
               <a href="#gallery" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Gallery
+              </a>
+              <a href="#booking" className="font-medium text-slate-600 transition hover:text-emerald-700">
+                Book
               </a>
               <a
                 href="#contact"
@@ -298,23 +273,47 @@ export default function EarthAndOmKidsHomepage() {
           {mobileMenuOpen && (
             <div className="border-t border-slate-200 bg-white/95 px-4 py-4 backdrop-blur md:hidden">
               <div className="flex flex-col gap-3 rounded-[1.5rem] bg-slate-50 p-4 text-base font-medium text-slate-700 shadow-sm ring-1 ring-slate-100">
-                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
+                <a
+                  href="#home"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700"
+                >
                   Home
                 </a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
+                <a
+                  href="#about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700"
+                >
                   About
                 </a>
-                <a href="#services" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
-                  Services
-                </a>
-                <a href="#schools" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
+                <a
+                  href="#schools"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700"
+                >
                   Schools
                 </a>
-                <a href="#booking" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
-                  Book
+                <a
+                  href="#services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700"
+                >
+                  Services
                 </a>
-                <a href="#gallery" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
+                <a
+                  href="#gallery"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700"
+                >
                   Gallery
+                </a>
+                <a
+                  href="#booking"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700"
+                >
+                  Book
                 </a>
                 <a
                   href="#contact"
@@ -328,28 +327,29 @@ export default function EarthAndOmKidsHomepage() {
           )}
         </header>
 
+        {/* 1. Hero */}
         <section id="home" className="relative px-4 pb-18 pt-10 md:px-10 lg:px-16 lg:pb-28 lg:pt-16">
           <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">
-                Refined kids yoga & mindfulness programs
+                Refined kids yoga &amp; mindfulness programs
               </SectionBadge>
 
               <div className="mt-5 inline-flex rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
                 Trusted by schools, childcare centres, and Montessori communities in Toronto
               </div>
 
-  <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight text-slate-900 sm:text-5xl md:text-6xl xl:text-7xl">
-                Kids yoga &amp; Mindfulness, Programs for Schools in Toronto
+              <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight text-slate-900 sm:text-5xl md:text-6xl xl:text-7xl">
+                Kids Yoga &amp; Mindfulness Programs for Schools in Toronto
               </h1>
-<h2 className="mt-4 text-lg font-semibold tracking-wide text-slate-600 md:text-xl">
-  Calm minds, joyful movement, and confident children.
-</h2>
+
+              <h2 className="mt-4 text-lg font-semibold tracking-wide text-slate-600 md:text-xl">
+                Calm minds, joyful movement, and confident children.
+              </h2>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg md:text-xl">
-                Earth &amp; OM Kids offers beautifully designed kids yoga and mindfulness programs
-  for schools, childcare centres, Montessori communities, and families across
-  Toronto and the GTA.
+                Earth &amp; OM Kids offers beautifully designed kids yoga and mindfulness programs for schools,
+                childcare centres, Montessori communities, and families across Toronto and the GTA.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -430,8 +430,8 @@ export default function EarthAndOmKidsHomepage() {
                     <div className="text-4xl">✨</div>
                     <h3 className="mt-4 text-xl font-bold text-slate-900">Designed for Real Classroom Impact</h3>
                     <p className="mt-2 text-sm leading-7 text-slate-600">
-                      Our programs are thoughtfully created to support focus, emotional regulation,
-  and positive classroom behavior in real school environments.
+                      Our programs are thoughtfully created to support focus, emotional regulation, and positive
+                      classroom behavior in real school environments.
                     </p>
                   </motion.div>
                 </div>
@@ -440,6 +440,7 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
+        {/* 2. Why Schools Choose */}
         <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
@@ -450,9 +451,8 @@ export default function EarthAndOmKidsHomepage() {
               </h2>
 
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                We partner with schools and childcare centres to deliver structured,
-                engaging, and age-appropriate yoga programs that support focus,
-                emotional well-being, and a positive classroom environment.
+                We partner with schools and childcare centres to deliver structured, engaging, and age-appropriate yoga
+                programs that support focus, emotional well-being, and a positive classroom environment.
               </p>
             </div>
 
@@ -504,6 +504,7 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
+        {/* 3. Trusted Centres */}
         <section className="px-4 py-10 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl rounded-[2.8rem] border border-white/70 bg-white/85 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-8 lg:p-12">
             <div className="text-center">
@@ -514,8 +515,8 @@ export default function EarthAndOmKidsHomepage() {
                 Valued by schools, daycares, and Montessori communities
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-500 md:text-base">
-                Earth &amp; OM Kids has partnered with respected early learning environments across the GTA to
-                bring calm, movement, mindfulness, and joyful yoga experiences to children.
+                Earth &amp; OM Kids has partnered with respected early learning environments across the GTA to bring
+                calm, movement, mindfulness, and joyful yoga experiences to children.
               </p>
             </div>
 
@@ -556,6 +557,176 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
+        {/* 4. About */}
+        <section id="about" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr]">
+              <div className="rounded-[2.5rem] border border-slate-100 bg-white p-5 shadow-[0_20px_60px_rgba(16,24,40,0.08)] sm:p-8 lg:p-10">
+                <div className="rounded-[2rem] bg-[linear-gradient(180deg,#ffffff_0%,#fafdfb_100%)] p-5 ring-1 ring-slate-100 sm:p-8">
+                  <SectionBadge color="text-sky-800 bg-sky-50/80 ring-sky-100">About Earth &amp; OM Kids</SectionBadge>
+                  <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+                    A calm, playful, and heart-centered approach
+                  </h2>
+
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
+                      <div className="text-sm font-semibold text-slate-500">Instructor</div>
+                      <div className="mt-1 text-xl font-black text-slate-900">Taran Kaur</div>
+                    </div>
+                    <div className="rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
+                      <div className="text-sm font-semibold text-slate-500">Background</div>
+                      <div className="mt-1 text-xl font-black text-slate-900">Early Childhood Educator</div>
+                    </div>
+                  </div>
+
+                  <p className="mt-6 leading-8 text-slate-600">
+                    Earth &amp; OM Kids helps children feel grounded, confident, joyful, and connected through yoga,
+                    movement, breathing, mindfulness, and play.
+                  </p>
+                  <p className="mt-4 leading-8 text-slate-600">
+                    Led by Taran Kaur, an Early Childhood Educator with nearly 10 years of experience, each session is
+                    designed to support children’s physical, emotional, and social well-being in a safe,
+                    age-appropriate, and engaging way.
+                  </p>
+                  <p className="mt-4 leading-8 text-slate-600">
+                    Taran also offers wellness workshops for educators, staff teams, and community groups focused on
+                    stress relief, mindful movement, breathwork, and relaxation.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  {benefits.map((item, index) => (
+                    <motion.div
+                      key={item}
+                      whileHover={{ y: -6, scale: 1.01 }}
+                      transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                      className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                    >
+                      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-50 to-amber-50 font-bold text-slate-700 shadow-sm ring-1 ring-slate-100">
+                        {index + 1}
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900">{item}</h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        Thoughtful, engaging yoga experiences that support children’s well-being in meaningful everyday
+                        ways.
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Schools */}
+        <section id="schools" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <SectionBadge color="text-purple-800 bg-white/90 ring-purple-100">For Schools</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                Bring yoga &amp; mindfulness to your school
+              </h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+                Our school yoga programs help children improve focus, reduce stress, build confidence, and create a
+                calmer classroom environment. Programs can be customized for different grade levels and school needs.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  emoji: '🧘',
+                  title: 'In-Class Yoga',
+                  text: 'Short yoga sessions that fit beautifully into the school day to improve focus and energy.',
+                },
+                {
+                  emoji: '🌿',
+                  title: 'Mindfulness & Breathing',
+                  text: 'Fun breathing exercises and calming activities that help children regulate emotions.',
+                },
+                {
+                  emoji: '🌈',
+                  title: 'Custom School Programs',
+                  text: 'Wellness weeks, assemblies, and special yoga events designed for your school community.',
+                },
+              ].map((item) => (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                >
+                  <div className="text-4xl">{item.emoji}</div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <a
+                href="#contact"
+                className="rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-500 px-8 py-4 font-bold text-white shadow-[0_12px_30px_rgba(168,85,247,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(168,85,247,0.28)]"
+              >
+                Request School Program
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Services */}
+        <section id="services" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">Services</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                Kids Yoga &amp; Mindfulness Programs for Schools and Childcare Centres in Toronto
+              </h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+                Every offering is designed to feel joyful, nurturing, and professionally delivered so children feel
+                comfortable, and schools or families feel confident in partnering with you.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-7 lg:grid-cols-3">
+              {services.map((service) => {
+                const Icon = service.icon
+                return (
+                  <motion.div
+                    key={service.title}
+                    whileHover={{ y: -6, scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                    transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                    className="group rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                  >
+                    <div
+                      className={`inline-flex rounded-[1.5rem] bg-gradient-to-br p-4 ${service.bg} ring-1 ring-slate-100`}
+                    >
+                      <Icon className="h-8 w-8 text-slate-700" />
+                    </div>
+                    <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-900">{service.title}</h3>
+                    <p className="mt-4 leading-7 text-slate-600">{service.text}</p>
+                    <div className="mt-6 space-y-3">
+                      {service.points.map((point) => (
+                        <div
+                          key={point}
+                          className="flex items-center gap-3 rounded-full bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-100"
+                        >
+                          <Star className="h-4 w-4 fill-current text-amber-500" />
+                          {point}
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 7. What is Kids Yoga */}
         <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
@@ -620,153 +791,7 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-4 py-16 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl text-center">
-            <SectionBadge color="text-fuchsia-800 bg-white/90 ring-fuchsia-100">Yoga Friends</SectionBadge>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
-              Gentle character moments children will love
-            </h2>
-            <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-              Playful character cards make the website feel warm, imaginative, and memorable while keeping the overall
-              experience polished and premium.
-            </p>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {yogaCharacters.map((item) => (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ y: -8, rotate: -1, scale: 1.01 }}
-                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-                  className="rounded-[2rem] border border-slate-100 bg-white p-7 text-center shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
-                >
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-pink-50 via-amber-50 to-sky-50 text-5xl shadow-md ring-1 ring-slate-100">
-                    {item.emoji}
-                  </div>
-                  <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-900">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr]">
-              <div className="rounded-[2.5rem] border border-slate-100 bg-white p-5 shadow-[0_20px_60px_rgba(16,24,40,0.08)] sm:p-8 lg:p-10">
-                <div className="rounded-[2rem] bg-[linear-gradient(180deg,#ffffff_0%,#fafdfb_100%)] p-5 ring-1 ring-slate-100 sm:p-8">
-                  <SectionBadge color="text-sky-800 bg-sky-50/80 ring-sky-100">About Earth &amp; OM Kids</SectionBadge>
-                  <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-                    A calm, playful, and heart-centered approach
-                  </h2>
-
-                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
-                      <div className="text-sm font-semibold text-slate-500">Instructor</div>
-                      <div className="mt-1 text-xl font-black text-slate-900">Taran Kaur</div>
-                    </div>
-                    <div className="rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
-                      <div className="text-sm font-semibold text-slate-500">Background</div>
-                      <div className="mt-1 text-xl font-black text-slate-900">Early Childhood Educator</div>
-                    </div>
-                  </div>
-
-                  <p className="mt-6 leading-8 text-slate-600">
-                    Earth &amp; OM Kids helps children feel grounded, confident, joyful, and connected through yoga,
-                    movement, breathing, mindfulness, and play.
-                  </p>
-                  <p className="mt-4 leading-8 text-slate-600">
-                    Led by Taran Kaur, an Early Childhood Educator with nearly 10 years of experience, each session is
-                    designed to support children’s physical, emotional, and social well-being in a safe,
-                    age-appropriate, and engaging way.
-                  </p>
-                  <p className="mt-4 leading-8 text-slate-600">
-                    Taran also offers wellness workshops for educators, staff teams, and community groups focused on
-                    stress relief, mindful movement, breathwork, and relaxation.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  {benefits.map((item, index) => (
-                    <motion.div
-                      key={item}
-                      whileHover={{ y: -6, scale: 1.01 }}
-                      transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-                      className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
-                    >
-                      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-50 to-amber-50 font-bold text-slate-700 shadow-sm ring-1 ring-slate-100">
-                        {index + 1}
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900">{item}</h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">
-                        Thoughtful, engaging yoga experiences that support children’s well-being in meaningful everyday
-                        ways.
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="schools" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-7xl">
-            <div className="text-center">
-              <SectionBadge color="text-purple-800 bg-white/90 ring-purple-100">For Schools</SectionBadge>
-              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
-                Bring yoga &amp; mindfulness to your school
-              </h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Our school yoga programs help children improve focus, reduce stress, build confidence, and create a
-                calmer classroom environment. Programs can be customized for different grade levels and school needs.
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  emoji: '🧘',
-                  title: 'In-Class Yoga',
-                  text: 'Short yoga sessions that fit beautifully into the school day to improve focus and energy.',
-                },
-                {
-                  emoji: '🌿',
-                  title: 'Mindfulness & Breathing',
-                  text: 'Fun breathing exercises and calming activities that help children regulate emotions.',
-                },
-                {
-                  emoji: '🌈',
-                  title: 'Custom School Programs',
-                  text: 'Wellness weeks, assemblies, and special yoga events designed for your school community.',
-                },
-              ].map((item) => (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ y: -6, scale: 1.01 }}
-                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-                  className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
-                >
-                  <div className="text-4xl">{item.emoji}</div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <a
-                href="#contact"
-                className="rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-500 px-8 py-4 font-bold text-white shadow-[0_12px_30px_rgba(168,85,247,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(168,85,247,0.28)]"
-              >
-                Request School Program
-              </a>
-            </div>
-          </div>
-        </section>
-
+        {/* 8. Benefits */}
         <section className="px-4 py-16 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl text-center">
             <SectionBadge color="text-green-800 bg-white/90 ring-green-100">Benefits of Kids Yoga</SectionBadge>
@@ -776,12 +801,36 @@ export default function EarthAndOmKidsHomepage() {
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {[
-                { emoji: '💪', title: 'Physical Health', text: 'Builds strength, flexibility, balance, and coordination.' },
-                { emoji: '🧠', title: 'Mental Focus', text: 'Improves concentration, attention span, and classroom readiness.' },
-                { emoji: '😊', title: 'Emotional Balance', text: 'Helps children manage stress, feelings, and confidence.' },
-                { emoji: '⚡', title: 'Energy & Calm', text: 'Teaches kids how to energize or relax when needed.' },
-                { emoji: '🎨', title: 'Creativity', text: 'Encourages imagination through storytelling and movement.' },
-                { emoji: '⭐', title: 'Self-Esteem', text: 'Supports body awareness, confidence, and pride.' },
+                {
+                  emoji: '💪',
+                  title: 'Physical Health',
+                  text: 'Builds strength, flexibility, balance, and coordination.',
+                },
+                {
+                  emoji: '🧠',
+                  title: 'Mental Focus',
+                  text: 'Improves concentration, attention span, and classroom readiness.',
+                },
+                {
+                  emoji: '😊',
+                  title: 'Emotional Balance',
+                  text: 'Helps children manage stress, feelings, and confidence.',
+                },
+                {
+                  emoji: '⚡',
+                  title: 'Energy & Calm',
+                  text: 'Teaches kids how to energize or relax when needed.',
+                },
+                {
+                  emoji: '🎨',
+                  title: 'Creativity',
+                  text: 'Encourages imagination through storytelling and movement.',
+                },
+                {
+                  emoji: '⭐',
+                  title: 'Self-Esteem',
+                  text: 'Supports body awareness, confidence, and pride.',
+                },
               ].map((item) => (
                 <motion.div
                   key={item.title}
@@ -798,6 +847,7 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
+        {/* 9. Age Groups */}
         <section className="px-4 py-16 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl text-center">
             <SectionBadge color="text-amber-800 bg-white/90 ring-amber-100">Age Groups</SectionBadge>
@@ -867,59 +917,52 @@ export default function EarthAndOmKidsHomepage() {
             <div className="text-5xl">🌈</div>
             <h2 className="mt-4 text-4xl font-black md:text-5xl">Every child can do yoga</h2>
             <p className="mx-auto mt-5 max-w-4xl text-xl leading-9 text-white/95 md:text-2xl md:leading-10">
-              Our classes are designed to meet each child where they are. No experience needed — just a ready-to-move
+              Our classes are designed to meet each child where they are. No experience needed just a ready-to-move
               body, gentle guidance, and a welcoming environment.
             </p>
           </div>
         </section>
 
-        <section id="services" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+        {/* 10. Gallery */}
+        <section id="gallery" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">Services</SectionBadge>
+              <SectionBadge color="text-sky-800 bg-white/90 ring-sky-100">Gallery</SectionBadge>
               <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
-                Kids Yoga & Mindfulness Programs for Schools and Childcare Centres in Toronto
+                A joyful kids yoga gallery
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Every offering is designed to feel joyful, nurturing, and professionally delivered — so children feel
-                comfortable, and schools or families feel confident in partnering with you.
-              </p>
+  A collection of joyful moments that showcase movement, mindfulness, and the natural happiness children experience through yoga.
+</p>
             </div>
 
-            <div className="mt-12 grid gap-7 lg:grid-cols-3">
-              {services.map((service) => {
-                const Icon = service.icon
-                return (
-                  <motion.div
-                    key={service.title}
-                    whileHover={{ y: -6, scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
-                    transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-                    className="group rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
-                  >
-                    <div className={`inline-flex rounded-[1.5rem] bg-gradient-to-br p-4 ${service.bg} ring-1 ring-slate-100`}>
-                      <Icon className="h-8 w-8 text-slate-700" />
-                    </div>
-                    <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-900">{service.title}</h3>
-                    <p className="mt-4 leading-7 text-slate-600">{service.text}</p>
-                    <div className="mt-6 space-y-3">
-                      {service.points.map((point) => (
-                        <div
-                          key={point}
-                          className="flex items-center gap-3 rounded-full bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-100"
-                        >
-                          <Star className="h-4 w-4 fill-current text-amber-500" />
-                          {point}
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )
-              })}
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {galleryImages.map((item) => (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ y: -6 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold tracking-tight text-slate-900">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* 11. Testimonials */}
         <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
@@ -976,6 +1019,67 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
+        {/* 12. FAQ */}
+        <section id="faq" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-5xl">
+            <div className="text-center">
+              <SectionBadge color="text-amber-800 bg-white/90 ring-amber-100">Frequently Asked Questions</SectionBadge>
+
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                Helpful answers for schools, centres, and families
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+                Everything you need to know about classes, age groups, booking, and how Earth &amp; OM Kids programs
+                can fit beautifully into your learning environment.
+              </p>
+            </div>
+
+            <div className="mt-12 space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index
+
+                return (
+                  <motion.div
+                    key={faq.question}
+                    layout
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden rounded-[1.8rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8"
+                    >
+                      <h3 className="text-base font-bold leading-7 text-slate-900 md:text-lg">{faq.question}</h3>
+
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 text-xl font-semibold text-slate-600 ring-1 ring-slate-100">
+                        {isOpen ? '−' : '+'}
+                      </div>
+                    </button>
+
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: isOpen ? 'auto' : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-0 md:px-8">
+                        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+                        <p className="pt-5 text-base leading-8 text-slate-600">{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 13. Book a Free Consultation */}
         <section id="booking" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] border border-white/80 bg-white/90 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl lg:p-12">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -1062,131 +1166,7 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section id="gallery" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-7xl">
-            <div className="text-center">
-              <SectionBadge color="text-sky-800 bg-white/90 ring-sky-100">Gallery</SectionBadge>
-              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
-                A joyful kids yoga gallery
-              </h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Carefully chosen child-friendly imagery gives your website a warmer, more believable, and premium
-                school-ready feel.
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {galleryImages.map((item) => (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ y: -6 }}
-                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-                  className="group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold tracking-tight text-slate-900">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-5xl">
-            <div className="text-center">
-              <SectionBadge color="text-amber-800 bg-white/90 ring-amber-100">
-                Frequently Asked Questions
-              </SectionBadge>
-
-              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
-                Helpful answers for schools, centres, and families
-              </h2>
-
-              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Everything you need to know about classes, age groups, booking, and how
-                Earth &amp; OM Kids programs can fit beautifully into your learning environment.
-              </p>
-            </div>
-
-            <div className="mt-12 space-y-4">
-              {faqs.map((faq, index) => {
-                const isOpen = openFaq === index
-
-                return (
-                  <motion.div
-                    key={faq.question}
-                    layout
-                    transition={{ duration: 0.25 }}
-                    className="overflow-hidden rounded-[1.8rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : index)}
-                      className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8"
-                    >
-                      <h3 className="text-base font-bold leading-7 text-slate-900 md:text-lg">
-                        {faq.question}
-                      </h3>
-
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 text-xl font-semibold text-slate-600 ring-1 ring-slate-100">
-                        {isOpen ? '−' : '+'}
-                      </div>
-                    </button>
-
-                    <motion.div
-                      initial={false}
-                      animate={{
-                        height: isOpen ? 'auto' : 0,
-                        opacity: isOpen ? 1 : 0,
-                      }}
-                      transition={{ duration: 0.25, ease: 'easeInOut' }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 pt-0 md:px-8">
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-                        <p className="pt-5 text-base leading-8 text-slate-600">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-4 py-8 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-gradient-to-r from-emerald-600 via-teal-500 to-sky-500 p-10 text-white shadow-[0_30px_80px_rgba(16,24,40,0.18)] lg:p-14">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <h2 className="text-3xl font-black tracking-tight md:text-4xl">
-                  Ready to bring yoga to your school or community?
-                </h2>
-                <p className="mt-4 max-w-2xl text-lg leading-8 text-white/90">
-                  Let’s create a beautiful program that helps children move, breathe, focus, and grow with confidence.
-                </p>
-              </div>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-emerald-700 shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
-
+        {/* 14. Contact */}
         <section id="contact" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -1311,13 +1291,7 @@ export default function EarthAndOmKidsHomepage() {
               <div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-500 text-white shadow-lg">
-                    <Image
-    src="/yoga-icon.png"
-    alt="Yoga logo"
-    width={40}
-    height={20}
-    className="object-contain"
-  />
+                    <Image src="/yoga-icon.png" alt="Yoga logo" width={40} height={20} className="object-contain" />
                   </div>
                   <div>
                     <div className="text-xl font-extrabold text-white">Earth &amp; OM Kids</div>
