@@ -110,6 +110,49 @@ const additionalCentres = [
   'Midland Childcare Centre',
 ]
 
+const faqs = [
+  {
+    question: 'What age groups do you work with?',
+    answer:
+      'Programs are available for children starting at 18 months and up. Toddler sessions are typically 30 minutes, while ages 3–5 are usually 45 minutes. Programs can also be adapted for older children depending on the setting and goals.',
+  },
+  {
+    question: 'Do you offer programs for schools and childcare centres?',
+    answer:
+      'Yes. Earth & OM Kids offers yoga and mindfulness programs for schools, childcare centres, Montessori communities, camps, and other child-focused environments. Sessions can be customized to fit your schedule, group size, and age range.',
+  },
+  {
+    question: 'What happens during a typical session?',
+    answer:
+      'Sessions may include playful movement, age-appropriate yoga poses, breathing exercises, mindfulness activities, stories, relaxation, and calm transitions. Each class is designed to feel engaging, nurturing, and developmentally appropriate.',
+  },
+  {
+    question: 'How long are the classes?',
+    answer:
+      'Class length depends on the age group and program type. Toddler classes are typically 30 minutes, and preschool sessions are often 45 minutes. School-age sessions can also be tailored to suit the classroom schedule.',
+  },
+  {
+    question: 'Can programs be customized for our school or centre?',
+    answer:
+      'Absolutely. Programs can be tailored based on age group, class size, available space, wellness goals, and schedule. Special themes, wellness weeks, and custom event formats can also be arranged.',
+  },
+  {
+    question: 'Do children need yoga experience?',
+    answer:
+      'No prior yoga experience is needed. Sessions are welcoming, beginner-friendly, and designed to help each child participate comfortably at their own pace.',
+  },
+  {
+    question: 'Do you offer educator or staff wellness workshops?',
+    answer:
+      'Yes. In addition to children’s programming, Earth & OM Kids also offers wellness workshops for educators, staff teams, and community groups with a focus on stress relief, mindful movement, breathwork, and relaxation.',
+  },
+  {
+    question: 'How do we book a program or ask about pricing?',
+    answer:
+      'You can use the contact form on the website to share your school, childcare centre, or event details. From there, we can discuss your goals, availability, age group, and the best program option for your space.',
+  },
+]
+
 const footerLinks = {
   pages: ['Home', 'About', 'Services', 'Contact'],
   offerings: ['School Programs', 'After-School Yoga', 'Mindfulness Workshops', 'Community Events'],
@@ -140,6 +183,7 @@ export default function EarthAndOmKidsHomepage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -386,11 +430,69 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <div className="px-4 py-4 md:px-10 lg:px-16">
+        <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            <div className="text-center">
+              <SectionBadge>Why Schools Choose Earth &amp; OM Kids</SectionBadge>
+
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                A trusted, calming, and professional yoga experience for children
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+                We partner with schools and childcare centres to deliver structured,
+                engaging, and age-appropriate yoga programs that support focus,
+                emotional well-being, and a positive classroom environment.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                {
+                  icon: '🏫',
+                  title: 'School-Ready Programs',
+                  text: 'Designed specifically for classrooms, daycares, and Montessori environments.',
+                },
+                {
+                  icon: '🧘‍♀️',
+                  title: 'Age-Appropriate Sessions',
+                  text: 'Carefully structured for toddlers (18 months+) through school-age children.',
+                },
+                {
+                  icon: '🌿',
+                  title: 'Calm & Focused Classrooms',
+                  text: 'Helps children regulate emotions, improve focus, and reduce stress.',
+                },
+                {
+                  icon: '⭐',
+                  title: 'Experienced & Trusted',
+                  text: 'Led by an Early Childhood Educator with nearly 10 years of experience.',
+                },
+              ].map((item) => (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="group relative rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                >
+                  <div className="text-4xl">{item.icon}</div>
+                  <h3 className="mt-4 text-xl font-black text-slate-900">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+                  <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 transition group-hover:opacity-100">
+                    <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-emerald-50 to-transparent" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-14 rounded-[2rem] bg-gradient-to-r from-emerald-600 to-teal-500 px-8 py-8 text-center text-white shadow-[0_20px_60px_rgba(16,185,129,0.25)]">
+              <h3 className="text-2xl font-black">Trusted by childcare centres and Montessori communities</h3>
+              <p className="mt-3 text-white/90">
+                Bringing calm, movement, and mindfulness into everyday learning environments.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
         <section className="px-4 py-10 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl rounded-[2.8rem] border border-white/70 bg-white/85 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-8 lg:p-12">
@@ -985,6 +1087,71 @@ export default function EarthAndOmKidsHomepage() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-5xl">
+            <div className="text-center">
+              <SectionBadge color="text-amber-800 bg-white/90 ring-amber-100">
+                Frequently Asked Questions
+              </SectionBadge>
+
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                Helpful answers for schools, centres, and families
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+                Everything you need to know about classes, age groups, booking, and how
+                Earth &amp; OM Kids programs can fit beautifully into your learning environment.
+              </p>
+            </div>
+
+            <div className="mt-12 space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index
+
+                return (
+                  <motion.div
+                    key={faq.question}
+                    layout
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden rounded-[1.8rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8"
+                    >
+                      <h3 className="text-base font-bold leading-7 text-slate-900 md:text-lg">
+                        {faq.question}
+                      </h3>
+
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 text-xl font-semibold text-slate-600 ring-1 ring-slate-100">
+                        {isOpen ? '−' : '+'}
+                      </div>
+                    </button>
+
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: isOpen ? 'auto' : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-0 md:px-8">
+                        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+                        <p className="pt-5 text-base leading-8 text-slate-600">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </section>
