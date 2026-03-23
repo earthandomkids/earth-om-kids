@@ -2,6 +2,7 @@
 
 import { type FormEvent, type ReactNode, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from "next/image";
 import {
   Sparkles,
   Heart,
@@ -225,7 +226,13 @@ export default function EarthAndOmKidsHomepage() {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-10 lg:px-16">
             <a href="#home" className="flex min-w-0 items-center gap-3">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-lg">
-                <Flower2 className="h-6 w-6" />
+                <Image
+    src="/yoga-icon.png"
+    alt="Yoga logo"
+    width={35}
+    height={30}
+    className="object-contain"
+  />
               </div>
               <div className="min-w-0">
                 <div className="truncate text-lg font-extrabold tracking-tight text-slate-900">Earth &amp; OM Kids</div>
@@ -1304,7 +1311,13 @@ export default function EarthAndOmKidsHomepage() {
               <div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-500 text-white shadow-lg">
-                    <Flower2 className="h-6 w-6" />
+                    <Image
+    src="/yoga-icon.png"
+    alt="Yoga logo"
+    width={40}
+    height={20}
+    className="object-contain"
+  />
                   </div>
                   <div>
                     <div className="text-xl font-extrabold text-white">Earth &amp; OM Kids</div>
