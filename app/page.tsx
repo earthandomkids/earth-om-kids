@@ -20,23 +20,23 @@ const services = [
   {
     icon: School,
     title: 'School Yoga Programs',
-    text: 'Engaging in-school yoga classes that support focus, confidence, emotional regulation, and joyful movement for children of different age groups.',
+    text: 'Beautifully guided in-school yoga sessions that support focus, confidence, emotional regulation, and joyful movement.',
     points: ['Classroom sessions', 'Wellness weeks', 'Custom school packages'],
-    bg: 'from-emerald-100 to-lime-100',
+    bg: 'from-emerald-100 to-lime-50',
   },
   {
     icon: Sparkles,
     title: 'After-School Classes',
-    text: 'Playful and calming sessions that help children unwind, move their bodies, and build mindfulness in a warm, safe environment.',
-    points: ['Weekly classes', 'Small groups', 'Fun breathing games'],
-    bg: 'from-sky-100 to-cyan-100',
+    text: 'Playful and calming classes that help children unwind, move their bodies, and build mindfulness in a warm environment.',
+    points: ['Weekly classes', 'Small groups', 'Breathing games'],
+    bg: 'from-sky-100 to-cyan-50',
   },
   {
     icon: Heart,
     title: 'Workshops & Events',
-    text: 'Special yoga and mindfulness experiences for camps, daycares, community groups, family events, and seasonal celebrations.',
-    points: ['Community events', 'Family yoga', 'Birthday & special themes'],
-    bg: 'from-pink-100 to-rose-100',
+    text: 'Special yoga and mindfulness experiences for camps, daycares, community groups, family events, and celebrations.',
+    points: ['Community events', 'Family yoga', 'Special themes'],
+    bg: 'from-pink-100 to-rose-50',
   },
 ]
 
@@ -51,44 +51,55 @@ const benefits = [
 
 const galleryImages = [
   {
-    image:
-      'https://images.pexels.com/photos/8613091/pexels-photo-8613091.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: '/images/kids-yoga-1.png',
     title: 'Kids Yoga Circle',
     text: 'A playful group yoga moment designed for children.',
   },
   {
-    image:
-      'https://images.pexels.com/photos/8613311/pexels-photo-8613311.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: '/images/kids-yoga-2.png',
     title: 'Mindful Breathing Time',
-    text: 'Simple breathing and calm activities for young learners.',
+    text: 'Simple breathing and calming activities for young learners.',
   },
   {
-    image:
-      'https://images.pexels.com/photos/7212931/pexels-photo-7212931.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: '/images/kids-yoga-3.png',
     title: 'Stretch & Move',
     text: 'Fun movement experiences that help kids feel strong and confident.',
   },
   {
-    image:
-      'https://images.pexels.com/photos/7045697/pexels-photo-7045697.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: '/images/kids-yoga-4.png',
     title: 'Creative Kids Yoga',
     text: 'Imaginative, child-friendly yoga sessions full of joy.',
   },
 ]
 
 const yogaCharacters = [
-  { emoji: '🌈', title: 'Rainbow Breath', text: 'Big breaths, bright energy, and calm little minds.' },
-  { emoji: '🦁', title: 'Lion Power', text: 'Confidence-building movement that helps kids feel brave.' },
-  { emoji: '🦋', title: 'Butterfly Calm', text: 'Gentle stretching, softness, and peaceful rest.' },
+  {
+    emoji: '🧘‍♀️',
+    title: 'Mindful Movement',
+    text: 'Gentle yoga poses that build balance, strength, and awareness.',
+  },
+  {
+    emoji: '✨',
+    title: 'Confidence & Joy',
+    text: 'Playful sessions that help children feel happy, proud, and capable.',
+  },
+  {
+    emoji: '🌿',
+    title: 'Calm & Relaxation',
+    text: 'Simple breathing and relaxation practices that support emotional well-being.',
+  },
 ]
 
-const trustedCentres = [
+const featuredCentres = [
   'McNicoll Avenue Child Care Program',
   'Kids Connect Daycare',
   'Le Petit Chaperon Rouge',
   'Beach Hill Montessori',
   'Abacus Montessori',
   'Lycée Français Toronto',
+]
+
+const additionalCentres = [
   'Northwest Childhood Learning Centre',
   'Smart Little Children Daycare Centre',
   'Sunny Faces Daycare',
@@ -106,7 +117,7 @@ const footerLinks = {
 
 function SectionBadge({
   children,
-  color = 'text-emerald-700 bg-white/80 ring-emerald-100',
+  color = 'text-emerald-800 bg-white/90 ring-emerald-100',
 }: {
   children: ReactNode
   color?: string
@@ -122,7 +133,7 @@ function SectionBadge({
 }
 
 function FloatingBlob({ className }: { className: string }) {
-  return <div className={`absolute rounded-full blur-3xl opacity-70 ${className}`} />
+  return <div className={`absolute rounded-full blur-3xl opacity-60 ${className}`} />
 }
 
 export default function EarthAndOmKidsHomepage() {
@@ -159,63 +170,49 @@ export default function EarthAndOmKidsHomepage() {
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top,_#fff7ed,_#ecfeff_35%,_#f0fdf4_70%,_#fdf2f8_100%)] text-slate-800">
+    <main className="min-h-screen overflow-x-hidden bg-[linear-gradient(180deg,#fefcf8_0%,#f8faf8_35%,#ffffff_65%,#fdfaf7_100%)] text-slate-800">
       <div className="relative">
-        <div className="pointer-events-none absolute inset-x-0 top-40 z-0 overflow-hidden">
-          <div className="mx-auto flex max-w-7xl justify-between px-6 md:px-10 lg:px-16">
-            <motion.div
-              animate={{ x: [0, 20, 0], y: [0, -10, 0] }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-              className="h-16 w-28 rounded-full bg-white/70 blur-sm shadow-[0_10px_30px_rgba(255,255,255,0.8)]"
-            />
-            <motion.div
-              animate={{ x: [0, -18, 0], y: [0, 10, 0] }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-              className="mt-16 h-20 w-36 rounded-full bg-white/70 blur-sm shadow-[0_10px_30px_rgba(255,255,255,0.8)]"
-            />
-          </div>
-        </div>
+        <FloatingBlob className="left-4 top-24 h-40 w-40 bg-emerald-100/70" />
+        <FloatingBlob className="right-10 top-40 h-52 w-52 bg-amber-100/60" />
+        <FloatingBlob className="left-1/3 top-[42rem] h-56 w-56 bg-rose-100/50" />
+        <FloatingBlob className="right-1/4 top-[95rem] h-48 w-48 bg-sky-100/50" />
 
-        <FloatingBlob className="left-6 top-24 h-40 w-40 bg-pink-200/70" />
-        <FloatingBlob className="right-10 top-32 h-52 w-52 bg-sky-200/60" />
-        <FloatingBlob className="left-1/3 top-[38rem] h-56 w-56 bg-yellow-200/50" />
-        <FloatingBlob className="right-1/4 top-[70rem] h-48 w-48 bg-purple-200/40" />
-        <FloatingBlob className="left-16 top-[120rem] h-44 w-44 bg-emerald-200/40" />
-
-        <header className="sticky top-0 z-30 border-b border-white/40 bg-white/80 backdrop-blur-xl">
+        <header className="sticky top-0 z-30 border-b border-white/60 bg-white/80 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-10 lg:px-16">
             <a href="#home" className="flex min-w-0 items-center gap-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-sky-400 text-white shadow-lg">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-lg">
                 <Flower2 className="h-6 w-6" />
               </div>
               <div className="min-w-0">
-                <div className="truncate text-lg font-extrabold tracking-tight">Earth &amp; OM Kids</div>
-                <div className="truncate text-xs font-medium text-slate-500">Kids Yoga • Mindfulness • School Programs</div>
+                <div className="truncate text-lg font-extrabold tracking-tight text-slate-900">Earth &amp; OM Kids</div>
+                <div className="truncate text-xs font-medium text-slate-500">
+                  Kids Yoga • Mindfulness • School Programs
+                </div>
               </div>
             </a>
 
             <nav className="hidden items-center gap-8 md:flex">
-              <a href="#home" className="font-medium text-slate-600 transition hover:text-emerald-600">
+              <a href="#home" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Home
               </a>
-              <a href="#about" className="font-medium text-slate-600 transition hover:text-emerald-600">
+              <a href="#about" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 About
               </a>
-              <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-600">
+              <a href="#services" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Services
               </a>
-              <a href="#schools" className="font-medium text-slate-600 transition hover:text-emerald-600">
+              <a href="#schools" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Schools
               </a>
-              <a href="#booking" className="font-medium text-slate-600 transition hover:text-emerald-600">
+              <a href="#booking" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Book
               </a>
-              <a href="#gallery" className="font-medium text-slate-600 transition hover:text-emerald-600">
+              <a href="#gallery" className="font-medium text-slate-600 transition hover:text-emerald-700">
                 Gallery
               </a>
               <a
                 href="#contact"
-                className="rounded-full bg-emerald-500 px-5 py-2.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+                className="rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 px-5 py-2.5 font-semibold text-white shadow-[0_12px_30px_rgba(16,185,129,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(16,185,129,0.28)]"
               >
                 Contact
               </a>
@@ -250,28 +247,28 @@ export default function EarthAndOmKidsHomepage() {
           {mobileMenuOpen && (
             <div className="border-t border-slate-200 bg-white/95 px-4 py-4 backdrop-blur md:hidden">
               <div className="flex flex-col gap-3 rounded-[1.5rem] bg-slate-50 p-4 text-base font-medium text-slate-700 shadow-sm ring-1 ring-slate-100">
-                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-600">
+                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
                   Home
                 </a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-600">
+                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
                   About
                 </a>
-                <a href="#services" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-600">
+                <a href="#services" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
                   Services
                 </a>
-                <a href="#schools" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-600">
+                <a href="#schools" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
                   Schools
                 </a>
-                <a href="#booking" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-600">
+                <a href="#booking" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
                   Book
                 </a>
-                <a href="#gallery" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-600">
+                <a href="#gallery" onClick={() => setMobileMenuOpen(false)} className="rounded-xl px-3 py-2 transition hover:bg-white hover:text-emerald-700">
                   Gallery
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mt-1 rounded-full bg-emerald-500 px-5 py-3 text-center font-semibold text-white shadow-lg"
+                  className="mt-1 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 px-5 py-3 text-center font-semibold text-white shadow-lg"
                 >
                   Contact
                 </a>
@@ -280,35 +277,37 @@ export default function EarthAndOmKidsHomepage() {
           )}
         </header>
 
-        <section id="home" className="relative px-4 pb-16 pt-10 md:px-10 lg:px-16 lg:pb-28 lg:pt-16">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+        <section id="home" className="relative px-4 pb-18 pt-10 md:px-10 lg:px-16 lg:pb-28 lg:pt-16">
+          <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <SectionBadge>Bright, playful yoga experiences for children</SectionBadge>
+              <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">
+                Refined yoga &amp; mindfulness experiences for children
+              </SectionBadge>
 
-              <div className="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-emerald-700 shadow-sm ring-1 ring-emerald-100">
+              <div className="mt-5 inline-flex rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
                 Trusted by schools, child care centres, and Montessori communities
               </div>
 
-              <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl md:text-6xl xl:text-7xl">
-                Calm bodies, happy hearts, and confident kids.
+              <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight text-slate-900 sm:text-5xl md:text-6xl xl:text-7xl">
+                Calm minds, joyful movement, and confident children.
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg md:text-xl">
-                Earth &amp; OM Kids brings joyful yoga, movement, and mindfulness programs to schools, families, camps,
-                and community spaces. Our classes are playful, nurturing, and designed to help children feel grounded,
-                strong, and inspired.
+                Earth &amp; OM Kids brings beautifully designed yoga and mindfulness experiences to schools,
+                childcare centres, and community spaces — helping children feel grounded, regulated, and inspired
+                through movement, breath, and play.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="#contact"
-                  className="rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-7 py-3.5 text-center text-base font-semibold text-white shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
+                  className="rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 px-7 py-3.5 text-center text-base font-semibold text-white shadow-[0_12px_30px_rgba(16,185,129,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(16,185,129,0.28)]"
                 >
                   Book a Class
                 </a>
                 <a
                   href="#services"
-                  className="rounded-full bg-white px-7 py-3.5 text-center text-base font-semibold text-slate-700 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl"
+                  className="rounded-full border border-slate-200 bg-white px-7 py-3.5 text-center text-base font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   Explore Services
                 </a>
@@ -316,20 +315,20 @@ export default function EarthAndOmKidsHomepage() {
 
               <div className="mt-8 grid max-w-2xl gap-4 sm:grid-cols-3">
                 {[
-                  { icon: Trees, title: 'Nature-Inspired', text: 'Warm earth tones with playful colors' },
-                  { icon: Sun, title: 'Joyful Learning', text: 'Movement, calm, and imagination' },
-                  { icon: Moon, title: 'Mindful Moments', text: 'Breathing, balance, and rest' },
+                  { icon: Trees, title: 'Nature-Inspired', text: 'Warm, grounded design with soft premium tones' },
+                  { icon: Sun, title: 'Joyful Learning', text: 'Movement, calm, and imagination combined' },
+                  { icon: Moon, title: 'Mindful Moments', text: 'Breathing, balance, and gentle rest' },
                 ].map((item) => {
                   const Icon = item.icon
                   return (
                     <motion.div
                       key={item.title}
-                      whileHover={{ y: -6, scale: 1.02 }}
+                      whileHover={{ y: -6, scale: 1.01 }}
                       transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-                      className="rounded-[1.75rem] bg-white/85 p-5 shadow-lg ring-1 ring-white/60 backdrop-blur-sm"
+                      className="rounded-[2rem] border border-slate-100 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                     >
-                      <Icon className="h-7 w-7 text-emerald-600" />
-                      <h3 className="mt-3 text-lg font-bold">{item.title}</h3>
+                      <Icon className="h-7 w-7 text-emerald-700" />
+                      <h3 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h3>
                       <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
                     </motion.div>
                   )
@@ -343,33 +342,42 @@ export default function EarthAndOmKidsHomepage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="relative"
             >
-              <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-pink-200 blur-2xl" />
-              <div className="absolute -right-6 bottom-10 h-28 w-28 rounded-full bg-yellow-200 blur-2xl" />
+              <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-emerald-100 blur-2xl" />
+              <div className="absolute -right-6 bottom-10 h-28 w-28 rounded-full bg-amber-100 blur-2xl" />
 
-              <div className="relative rounded-[2.5rem] border border-white/70 bg-white/80 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl md:p-8">
+              <div className="relative rounded-[2.5rem] border border-white/80 bg-white/90 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-8">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <motion.div whileHover={{ y: -6 }} className="rounded-[2rem] bg-gradient-to-br from-emerald-100 to-green-50 p-6 shadow-sm">
+                  <motion.div
+                    whileHover={{ y: -6 }}
+                    className="rounded-[2rem] bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm ring-1 ring-emerald-100"
+                  >
                     <div className="text-4xl">🧘‍♀️</div>
-                    <h3 className="mt-4 text-xl font-bold">For Schools</h3>
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">For Schools</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-600">
                       Beautifully structured yoga sessions that support wellness, focus, and classroom calm.
                     </p>
                   </motion.div>
 
-                  <motion.div whileHover={{ y: -6 }} className="rounded-[2rem] bg-gradient-to-br from-sky-100 to-cyan-50 p-6 shadow-sm">
+                  <motion.div
+                    whileHover={{ y: -6 }}
+                    className="rounded-[2rem] bg-gradient-to-br from-sky-50 to-white p-6 shadow-sm ring-1 ring-sky-100"
+                  >
                     <div className="text-4xl">🌈</div>
-                    <h3 className="mt-4 text-xl font-bold">For Families</h3>
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">For Families</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-600">
                       Gentle, fun, and imaginative classes that help children move, breathe, and shine.
                     </p>
                   </motion.div>
 
-                  <motion.div whileHover={{ y: -6 }} className="rounded-[2rem] bg-gradient-to-br from-yellow-100 to-orange-50 p-6 shadow-sm sm:col-span-2">
+                  <motion.div
+                    whileHover={{ y: -6 }}
+                    className="rounded-[2rem] bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm ring-1 ring-amber-100 sm:col-span-2"
+                  >
                     <div className="text-4xl">✨</div>
-                    <h3 className="mt-4 text-xl font-bold">A magical first impression</h3>
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">A premium first impression</h3>
                     <p className="mt-2 text-sm leading-7 text-slate-600">
-                      Designed with cheerful colors, rounded cards, soft light, and a premium child-friendly feel so
-                      your visitors instantly feel wonder, trust, and warmth.
+                      A calm, elevated visual experience designed to feel trustworthy, professional, and beautiful to
+                      schools, families, and community partners.
                     </p>
                   </motion.div>
                 </div>
@@ -379,23 +387,55 @@ export default function EarthAndOmKidsHomepage() {
         </section>
 
         <div className="px-4 py-4 md:px-10 lg:px-16">
-          <div className="mx-auto flex max-w-7xl items-center justify-center">
-            <div className="h-4 w-full rounded-full bg-gradient-to-r from-pink-300 via-yellow-300 via-emerald-300 via-sky-300 to-purple-300 shadow-lg opacity-90" />
+          <div className="mx-auto max-w-7xl">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
           </div>
         </div>
 
         <section className="px-4 py-10 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-white/60 bg-white/75 p-6 shadow-xl backdrop-blur-xl lg:p-10">
+          <div className="mx-auto max-w-7xl rounded-[2.8rem] border border-white/70 bg-white/85 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-8 lg:p-12">
             <div className="text-center">
-              <div className="text-xs font-bold uppercase tracking-[0.22em] text-slate-500">Trusted by</div>
+              <div className="text-xs font-bold uppercase tracking-[0.32em] text-slate-500">
+                Trusted by leading childcare centres
+              </div>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
+                Valued by schools, daycares, and Montessori communities
+              </h2>
+              <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-500 md:text-base">
+                Earth &amp; OM Kids has partnered with respected early learning environments across the GTA to
+                bring calm, movement, mindfulness, and joyful yoga experiences to children.
+              </p>
             </div>
 
-            <div className="mt-6 grid gap-3 md:grid-cols-3 xl:grid-cols-4">
-              {trustedCentres.map((centre) => (
+            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {featuredCentres.map((centre) => (
+                <motion.div
+                  key={centre}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="group relative overflow-hidden rounded-[1.8rem] border border-white/70 bg-gradient-to-br from-white to-slate-50 px-6 py-5 text-center shadow-[0_12px_30px_rgba(15,23,42,0.06)]"
+                >
+                  <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-emerald-200 to-transparent" />
+                  <div className="text-base font-bold text-slate-800 md:text-lg">{centre}</div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="my-10 flex items-center gap-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-slate-200" />
+              <div className="rounded-full bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-400 ring-1 ring-slate-200">
+                And more partners
+              </div>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-slate-200" />
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {additionalCentres.map((centre) => (
                 <motion.div
                   key={centre}
                   whileHover={{ y: -4 }}
-                  className="rounded-[1.35rem] bg-white/90 px-4 py-4 text-center text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100"
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="rounded-[1.35rem] border border-slate-100 bg-white/90 px-4 py-4 text-center text-sm font-semibold text-slate-600 shadow-sm"
                 >
                   {centre}
                 </motion.div>
@@ -404,11 +444,11 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 md:px-10 lg:px-16">
+        <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <SectionBadge color="text-emerald-700 bg-emerald-50 ring-emerald-100">What is Kids Yoga?</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+              <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">What is Kids Yoga?</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
                 Movement, mindfulness, and fun made just for children
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
@@ -419,30 +459,30 @@ export default function EarthAndOmKidsHomepage() {
 
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
               <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                className="rounded-[2rem] bg-gradient-to-br from-yellow-100 to-orange-50 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                className="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/70 text-3xl shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-3xl shadow-sm ring-1 ring-amber-100">
                   🎯
                 </div>
-                <h3 className="mt-6 text-2xl font-black text-orange-600">Made for Children</h3>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
+                <h3 className="mt-6 text-2xl font-black text-slate-900">Made for Children</h3>
+                <p className="mt-4 text-lg leading-8 text-slate-600">
                   Our classes are designed for kids ages 18 months and up with songs, games, stories, breathing, and
                   playful movement that keeps children engaged.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                className="rounded-[2rem] bg-gradient-to-br from-sky-100 to-cyan-50 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                className="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/70 text-3xl shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-50 text-3xl shadow-sm ring-1 ring-sky-100">
                   🧘
                 </div>
-                <h3 className="mt-6 text-2xl font-black text-blue-600">Why Earth &amp; OM?</h3>
-                <ul className="mt-4 space-y-3 text-lg leading-8 text-slate-700">
+                <h3 className="mt-6 text-2xl font-black text-slate-900">Why Earth &amp; OM?</h3>
+                <ul className="mt-4 space-y-3 text-lg leading-8 text-slate-600">
                   <li>🌟 Safe and nurturing environment</li>
                   <li>🎨 Creative classes with movement and play</li>
                   <li>❤️ Confidence and self-awareness focus</li>
@@ -451,15 +491,15 @@ export default function EarthAndOmKidsHomepage() {
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                className="rounded-[2rem] bg-gradient-to-br from-emerald-100 to-teal-50 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                className="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/70 text-3xl shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-3xl shadow-sm ring-1 ring-emerald-100">
                   🌱
                 </div>
-                <h3 className="mt-6 text-2xl font-black text-emerald-600">Grow &amp; Learn</h3>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
+                <h3 className="mt-6 text-2xl font-black text-slate-900">Grow &amp; Learn</h3>
+                <p className="mt-4 text-lg leading-8 text-slate-600">
                   Children learn breathing techniques, animal and nature-inspired poses, and mindfulness practices that
                   support focus, calm, and everyday well-being.
                 </p>
@@ -468,37 +508,29 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <div className="px-6 py-4 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl">
-            <motion.div
-              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-              className="h-5 rounded-full bg-[linear-gradient(90deg,#f9a8d4,#fde68a,#86efac,#7dd3fc,#c4b5fd,#f9a8d4)] bg-[length:200%_200%] shadow-md"
-            />
-          </div>
-        </div>
-
-        <section className="px-6 py-16 md:px-10 lg:px-16">
+        <section className="px-4 py-16 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl text-center">
-            <SectionBadge color="text-fuchsia-700 bg-fuchsia-50 ring-fuchsia-100">Yoga Friends</SectionBadge>
-            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Cute yoga characters kids will love</h2>
+            <SectionBadge color="text-fuchsia-800 bg-white/90 ring-fuchsia-100">Yoga Friends</SectionBadge>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+              Gentle character moments children will love
+            </h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-              Playful little character cards make the website feel warm, imaginative, and more memorable for families
-              and schools.
+              Playful character cards make the website feel warm, imaginative, and memorable while keeping the overall
+              experience polished and premium.
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {yogaCharacters.map((item) => (
                 <motion.div
                   key={item.title}
-                  whileHover={{ y: -8, rotate: -1, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                  className="rounded-[2rem] bg-white/85 p-7 text-center shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
+                  whileHover={{ y: -8, rotate: -1, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="rounded-[2rem] border border-slate-100 bg-white p-7 text-center shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                 >
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 via-yellow-100 to-sky-100 text-5xl shadow-md">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-pink-50 via-amber-50 to-sky-50 text-5xl shadow-md ring-1 ring-slate-100">
                     {item.emoji}
                   </div>
-                  <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-800">{item.title}</h3>
+                  <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-900">{item.title}</h3>
                   <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
                 </motion.div>
               ))}
@@ -506,24 +538,24 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section id="about" className="px-6 py-20 md:px-10 lg:px-16">
+        <section id="about" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr]">
-              <div className="rounded-[2.5rem] bg-gradient-to-br from-emerald-200 via-teal-100 to-sky-100 p-5 shadow-[0_20px_60px_rgba(16,24,40,0.12)] sm:p-8 lg:p-10">
-                <div className="rounded-[2rem] bg-white/88 p-5 shadow-lg backdrop-blur-sm sm:p-8">
-                  <SectionBadge color="text-sky-700 bg-sky-50 ring-sky-100">About Earth &amp; OM Kids</SectionBadge>
-                  <h2 className="mt-5 text-3xl font-black tracking-tight sm:text-4xl">
+              <div className="rounded-[2.5rem] border border-slate-100 bg-white p-5 shadow-[0_20px_60px_rgba(16,24,40,0.08)] sm:p-8 lg:p-10">
+                <div className="rounded-[2rem] bg-[linear-gradient(180deg,#ffffff_0%,#fafdfb_100%)] p-5 ring-1 ring-slate-100 sm:p-8">
+                  <SectionBadge color="text-sky-800 bg-sky-50/80 ring-sky-100">About Earth &amp; OM Kids</SectionBadge>
+                  <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
                     A calm, playful, and heart-centered approach
                   </h2>
 
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
                     <div className="rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
                       <div className="text-sm font-semibold text-slate-500">Instructor</div>
-                      <div className="mt-1 text-xl font-black text-slate-800">Taran Kaur</div>
+                      <div className="mt-1 text-xl font-black text-slate-900">Taran Kaur</div>
                     </div>
                     <div className="rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
                       <div className="text-sm font-semibold text-slate-500">Background</div>
-                      <div className="mt-1 text-xl font-black text-slate-800">Early Childhood Educator</div>
+                      <div className="mt-1 text-xl font-black text-slate-900">Early Childhood Educator</div>
                     </div>
                   </div>
 
@@ -548,14 +580,14 @@ export default function EarthAndOmKidsHomepage() {
                   {benefits.map((item, index) => (
                     <motion.div
                       key={item}
-                      whileHover={{ y: -6, scale: 1.02 }}
-                      transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                      className="rounded-[2rem] bg-white/85 p-6 shadow-lg ring-1 ring-white/70 backdrop-blur-sm"
+                      whileHover={{ y: -6, scale: 1.01 }}
+                      transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                      className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                     >
-                      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-yellow-100 font-bold text-slate-700 shadow-sm">
+                      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-50 to-amber-50 font-bold text-slate-700 shadow-sm ring-1 ring-slate-100">
                         {index + 1}
                       </div>
-                      <h3 className="text-lg font-bold">{item}</h3>
+                      <h3 className="text-lg font-bold text-slate-900">{item}</h3>
                       <p className="mt-2 text-sm leading-6 text-slate-600">
                         Thoughtful, engaging yoga experiences that support children’s well-being in meaningful everyday
                         ways.
@@ -568,22 +600,12 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <div className="px-6 py-6 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl">
-            <motion.div
-              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-              className="h-5 rounded-full bg-[linear-gradient(90deg,#f9a8d4,#fde68a,#86efac,#7dd3fc,#c4b5fd,#f9a8d4)] bg-[length:200%_200%] shadow-md"
-            />
-          </div>
-        </div>
-
-        <section id="schools" className="px-6 py-20 md:px-10 lg:px-16">
+        <section id="schools" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <SectionBadge color="text-purple-700 bg-purple-50 ring-purple-100">For Schools</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
-                Bring Yoga &amp; Mindfulness to Your School
+              <SectionBadge color="text-purple-800 bg-white/90 ring-purple-100">For Schools</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                Bring yoga &amp; mindfulness to your school
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
                 Our school yoga programs help children improve focus, reduce stress, build confidence, and create a
@@ -596,7 +618,7 @@ export default function EarthAndOmKidsHomepage() {
                 {
                   emoji: '🧘',
                   title: 'In-Class Yoga',
-                  text: 'Short yoga sessions that fit into the school day to improve focus and energy.',
+                  text: 'Short yoga sessions that fit beautifully into the school day to improve focus and energy.',
                 },
                 {
                   emoji: '🌿',
@@ -606,18 +628,18 @@ export default function EarthAndOmKidsHomepage() {
                 {
                   emoji: '🌈',
                   title: 'Custom School Programs',
-                  text: 'Wellness weeks, assemblies, and special yoga events designed for your school.',
+                  text: 'Wellness weeks, assemblies, and special yoga events designed for your school community.',
                 },
               ].map((item) => (
                 <motion.div
                   key={item.title}
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                  className="rounded-[2rem] bg-white/85 p-6 shadow-lg ring-1 ring-white/60"
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                 >
                   <div className="text-4xl">{item.emoji}</div>
-                  <h3 className="mt-4 text-xl font-bold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{item.text}</p>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -625,7 +647,7 @@ export default function EarthAndOmKidsHomepage() {
             <div className="mt-12 text-center">
               <a
                 href="#contact"
-                className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
+                className="rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-500 px-8 py-4 font-bold text-white shadow-[0_12px_30px_rgba(168,85,247,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(168,85,247,0.28)]"
               >
                 Request School Program
               </a>
@@ -633,10 +655,10 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 md:px-10 lg:px-16">
+        <section className="px-4 py-16 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl text-center">
-            <SectionBadge color="text-green-700 bg-green-50 ring-green-100">Benefits of Kids Yoga</SectionBadge>
-            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+            <SectionBadge color="text-green-800 bg-white/90 ring-green-100">Benefits of Kids Yoga</SectionBadge>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
               Yoga helps children grow in so many wonderful ways
             </h2>
 
@@ -651,12 +673,12 @@ export default function EarthAndOmKidsHomepage() {
               ].map((item) => (
                 <motion.div
                   key={item.title}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                  className="rounded-[2rem] bg-white/85 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                 >
                   <div className="text-5xl">{item.emoji}</div>
-                  <h3 className="mt-5 text-2xl font-black text-slate-800">{item.title}</h3>
+                  <h3 className="mt-5 text-2xl font-black text-slate-900">{item.title}</h3>
                   <p className="mt-4 text-lg leading-8 text-slate-600">{item.text}</p>
                 </motion.div>
               ))}
@@ -664,10 +686,10 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 md:px-10 lg:px-16">
+        <section className="px-4 py-16 md:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl text-center">
-            <SectionBadge color="text-amber-700 bg-amber-50 ring-amber-100">Age Groups</SectionBadge>
-            <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+            <SectionBadge color="text-amber-800 bg-white/90 ring-amber-100">Age Groups</SectionBadge>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
               Programs designed for different stages of childhood
             </h2>
 
@@ -678,7 +700,7 @@ export default function EarthAndOmKidsHomepage() {
                   title: 'Toddler Yoga',
                   ages: '18 Months+',
                   text: 'Gentle, playful movement with songs, sensory fun, and simple activities designed for toddlers.',
-                  bg: 'from-pink-100 to-rose-50',
+                  bg: 'from-rose-50 to-white',
                   time: '30 minutes',
                 },
                 {
@@ -686,7 +708,7 @@ export default function EarthAndOmKidsHomepage() {
                   title: 'Little Yogis',
                   ages: 'Ages 3-5',
                   text: 'Playful introduction to yoga through stories, songs, and simple poses.',
-                  bg: 'from-yellow-100 to-amber-50',
+                  bg: 'from-amber-50 to-white',
                   time: '45 minutes',
                 },
                 {
@@ -694,7 +716,7 @@ export default function EarthAndOmKidsHomepage() {
                   title: 'Growing Yogis',
                   ages: 'Ages 6-8',
                   text: 'Fun sequences with animal poses, breathing games, and relaxation.',
-                  bg: 'from-emerald-100 to-teal-50',
+                  bg: 'from-emerald-50 to-white',
                   time: '45 minutes',
                 },
                 {
@@ -702,21 +724,21 @@ export default function EarthAndOmKidsHomepage() {
                   title: 'Young Warriors',
                   ages: 'Ages 9-12',
                   text: 'More advanced poses, confidence work, mindfulness, and self-regulation practices.',
-                  bg: 'from-orange-100 to-rose-50',
+                  bg: 'from-orange-50 to-white',
                   time: '60 minutes',
                 },
               ].map((item) => (
                 <motion.div
                   key={item.title}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                  className={`rounded-[2rem] bg-gradient-to-br ${item.bg} p-8 shadow-[0_18px_50px_rgba(15,23,42,0.10)] ring-1 ring-white/70`}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className={`rounded-[2rem] bg-gradient-to-br ${item.bg} p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)] ring-1 ring-slate-100`}
                 >
                   <div className="text-center">
                     <div className="text-5xl">{item.emoji}</div>
-                    <h3 className="mt-4 text-3xl font-black text-slate-800">{item.title}</h3>
+                    <h3 className="mt-4 text-3xl font-black text-slate-900">{item.title}</h3>
                     <div className="mt-2 text-xl font-bold text-slate-700">{item.ages}</div>
-                    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-700">{item.text}</p>
+                    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">{item.text}</p>
                     <div className="mt-6 flex flex-col items-center justify-center gap-3 text-base font-semibold text-slate-700 sm:flex-row sm:gap-8">
                       <span>🕒 {item.time}</span>
                       <span>👥 Small Groups</span>
@@ -728,22 +750,22 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-6 py-10 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-gradient-to-r from-emerald-400 to-cyan-400 px-10 py-14 text-center text-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
+        <section className="px-4 py-10 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500 px-8 py-14 text-center text-white shadow-[0_20px_60px_rgba(15,23,42,0.12)] lg:px-12">
             <div className="text-5xl">🌈</div>
-            <h2 className="mt-4 text-4xl font-black md:text-5xl">Every Child Can Do Yoga!</h2>
-            <p className="mx-auto mt-5 max-w-4xl text-2xl leading-10 text-white/95">
-              Our classes are designed to meet each child where they are. No experience needed, just a positive
-              attitude and a ready-to-move body.
+            <h2 className="mt-4 text-4xl font-black md:text-5xl">Every child can do yoga</h2>
+            <p className="mx-auto mt-5 max-w-4xl text-xl leading-9 text-white/95 md:text-2xl md:leading-10">
+              Our classes are designed to meet each child where they are. No experience needed — just a ready-to-move
+              body, gentle guidance, and a welcoming environment.
             </p>
           </div>
         </section>
 
-        <section id="services" className="px-6 py-20 md:px-10 lg:px-16">
+        <section id="services" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <SectionBadge color="text-emerald-700 bg-emerald-50 ring-emerald-100">Services</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
+              <SectionBadge color="text-emerald-800 bg-white/90 ring-emerald-100">Services</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
                 Beautiful offerings for schools, families, and communities
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
@@ -758,15 +780,15 @@ export default function EarthAndOmKidsHomepage() {
                 return (
                   <motion.div
                     key={service.title}
-                    whileHover={{ y: -8, scale: 1.02 }}
+                    whileHover={{ y: -6, scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
-                    transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                    className="group rounded-[2.3rem] border border-white/70 bg-white/80 p-7 shadow-[0_20px_60px_rgba(15,23,42,0.10)] backdrop-blur-sm"
+                    transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                    className="group rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                   >
-                    <div className={`inline-flex rounded-[1.5rem] bg-gradient-to-br p-4 ${service.bg}`}>
+                    <div className={`inline-flex rounded-[1.5rem] bg-gradient-to-br p-4 ${service.bg} ring-1 ring-slate-100`}>
                       <Icon className="h-8 w-8 text-slate-700" />
                     </div>
-                    <h3 className="mt-5 text-2xl font-black tracking-tight">{service.title}</h3>
+                    <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-900">{service.title}</h3>
                     <p className="mt-4 leading-7 text-slate-600">{service.text}</p>
                     <div className="mt-6 space-y-3">
                       {service.points.map((point) => (
@@ -774,7 +796,7 @@ export default function EarthAndOmKidsHomepage() {
                           key={point}
                           className="flex items-center gap-3 rounded-full bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-100"
                         >
-                          <Star className="h-4 w-4 fill-current text-yellow-500" />
+                          <Star className="h-4 w-4 fill-current text-amber-500" />
                           {point}
                         </div>
                       ))}
@@ -786,13 +808,15 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-6 py-20 md:px-10 lg:px-16">
+        <section className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <SectionBadge color="text-amber-700 bg-amber-50 ring-amber-100">Testimonials</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Kind words from schools and families</h2>
+              <SectionBadge color="text-amber-800 bg-white/90 ring-amber-100">Testimonials</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                Kind words from schools and families
+              </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                Social proof builds trust fast. This section helps principals, teachers, and parents feel confident
+                Social proof builds trust quickly. This section helps principals, teachers, and parents feel confident
                 about booking your program.
               </p>
             </div>
@@ -820,18 +844,18 @@ export default function EarthAndOmKidsHomepage() {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                  className="rounded-[2rem] bg-white/85 p-7 shadow-[0_20px_60px_rgba(15,23,42,0.10)] ring-1 ring-white/60 backdrop-blur-sm"
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="rounded-[2rem] border border-slate-100 bg-white p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                 >
-                  <div className="flex items-center gap-1 text-yellow-500">
+                  <div className="flex items-center gap-1 text-amber-500">
                     {[...Array(5)].map((_, starIndex) => (
                       <Star key={starIndex} className="h-5 w-5 fill-current" />
                     ))}
                   </div>
                   <p className="mt-5 text-base leading-8 text-slate-600">“{item.quote}”</p>
                   <div className="mt-6">
-                    <div className="font-bold text-slate-800">{item.name}</div>
+                    <div className="font-bold text-slate-900">{item.name}</div>
                     <div className="text-sm text-slate-500">{item.org}</div>
                   </div>
                 </motion.div>
@@ -840,17 +864,17 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section id="booking" className="px-6 py-20 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl rounded-[2.7rem] border border-white/70 bg-white/80 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl lg:p-12">
+        <section id="booking" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] border border-white/80 bg-white/90 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl lg:p-12">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
-                <SectionBadge color="text-rose-700 bg-rose-50 ring-rose-100">Book a Free Consultation</SectionBadge>
-                <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
-                  Make it easy for schools to book you instantly
+                <SectionBadge color="text-rose-800 bg-white/90 ring-rose-100">Book a Free Consultation</SectionBadge>
+                <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                  Make it easy for schools to take the next step
                 </h2>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-                  Offer a free consultation call or trial discussion so schools can quickly learn about your program and
-                  choose the best fit. This is one of the strongest ways to turn visitors into real bookings.
+                  Offer a free consultation call so schools, childcare centres, and organizers can quickly learn about
+                  your program and choose the best fit.
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -872,13 +896,13 @@ export default function EarthAndOmKidsHomepage() {
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
                     href="#contact"
-                    className="rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-7 py-3.5 text-base font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
+                    className="rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-7 py-3.5 text-base font-bold text-white shadow-[0_12px_30px_rgba(244,63,94,0.2)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(244,63,94,0.26)]"
                   >
                     Book Free Consultation
                   </a>
                   <a
                     href="#contact"
-                    className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-slate-700 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl"
+                    className="rounded-full border border-slate-200 bg-white px-7 py-3.5 text-base font-bold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   >
                     Ask a Question
                   </a>
@@ -887,7 +911,7 @@ export default function EarthAndOmKidsHomepage() {
 
               <motion.div
                 whileHover={{ y: -6 }}
-                className="rounded-[2.2rem] bg-gradient-to-br from-pink-100 via-rose-50 to-orange-50 p-6 shadow-inner ring-1 ring-white/80 lg:p-8"
+                className="rounded-[2.2rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-6 shadow-inner ring-1 ring-slate-100 lg:p-8"
               >
                 <div className="rounded-[1.8rem] bg-white p-6 shadow-lg ring-1 ring-slate-100">
                   <div className="mb-4 flex items-center justify-between">
@@ -895,7 +919,7 @@ export default function EarthAndOmKidsHomepage() {
                       <div className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">
                         Booking Preview
                       </div>
-                      <div className="mt-1 text-2xl font-black text-slate-800">Free School Consultation</div>
+                      <div className="mt-1 text-2xl font-black text-slate-900">Free School Consultation</div>
                     </div>
                     <div className="text-3xl">📅</div>
                   </div>
@@ -903,19 +927,19 @@ export default function EarthAndOmKidsHomepage() {
                   <div className="space-y-4">
                     <div className="rounded-[1.25rem] bg-slate-50 p-4 ring-1 ring-slate-100">
                       <div className="text-sm font-semibold text-slate-500">Session length</div>
-                      <div className="mt-1 text-lg font-bold text-slate-800">15 minutes</div>
+                      <div className="mt-1 text-lg font-bold text-slate-900">15 minutes</div>
                     </div>
 
                     <div className="rounded-[1.25rem] bg-slate-50 p-4 ring-1 ring-slate-100">
                       <div className="text-sm font-semibold text-slate-500">Best for</div>
-                      <div className="mt-1 text-lg font-bold text-slate-800">
+                      <div className="mt-1 text-lg font-bold text-slate-900">
                         Schools, daycares, and community programs
                       </div>
                     </div>
 
                     <div className="rounded-[1.25rem] bg-slate-50 p-4 ring-1 ring-slate-100">
                       <div className="text-sm font-semibold text-slate-500">What you’ll discuss</div>
-                      <div className="mt-1 text-lg font-bold text-slate-800">
+                      <div className="mt-1 text-lg font-bold text-slate-900">
                         Program goals, age groups, schedule, and pricing
                       </div>
                     </div>
@@ -926,13 +950,16 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section id="gallery" className="px-6 py-20 md:px-10 lg:px-16">
+        <section id="gallery" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <SectionBadge color="text-sky-700 bg-sky-50 ring-sky-100">Gallery</SectionBadge>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">A joyful kids yoga gallery</h2>
+              <SectionBadge color="text-sky-800 bg-white/90 ring-sky-100">Gallery</SectionBadge>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-900 md:text-4xl xl:text-5xl">
+                A joyful kids yoga gallery
+              </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-                These child-friendly photos give your website a warmer and more believable school-ready feel.
+                Carefully chosen child-friendly imagery gives your website a warmer, more believable, and premium
+                school-ready feel.
               </p>
             </div>
 
@@ -940,21 +967,21 @@ export default function EarthAndOmKidsHomepage() {
               {galleryImages.map((item) => (
                 <motion.div
                   key={item.title}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-                  className="overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.10)] ring-1 ring-white/70"
+                  whileHover={{ y: -6 }}
+                  transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                  className="group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
                 >
                   <div className="relative overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-64 w-full object-cover transition duration-500 hover:scale-110"
+                      className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl font-black tracking-tight text-slate-800">{item.title}</h3>
-                    <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+                    <h3 className="text-xl font-bold tracking-tight text-slate-900">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
                   </div>
                 </motion.div>
               ))}
@@ -962,8 +989,8 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section className="px-6 py-8 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 p-10 text-white shadow-[0_30px_80px_rgba(16,24,40,0.18)] lg:p-14">
+        <section className="px-4 py-8 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-gradient-to-r from-emerald-600 via-teal-500 to-sky-500 p-10 text-white shadow-[0_30px_80px_rgba(16,24,40,0.18)] lg:p-14">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <h2 className="text-3xl font-black tracking-tight md:text-4xl">
@@ -983,44 +1010,45 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <section id="contact" className="px-6 py-20 md:px-10 lg:px-16">
+        <section id="contact" className="px-4 py-16 md:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="rounded-[2.5rem] bg-white/80 p-8 shadow-xl ring-1 ring-white/60 backdrop-blur-sm lg:p-10">
-                <SectionBadge color="text-pink-700 bg-pink-50 ring-pink-100">Contact Us</SectionBadge>
-                <h2 className="mt-5 text-4xl font-black tracking-tight">Let’s connect</h2>
+              <div className="rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] lg:p-10">
+                <SectionBadge color="text-pink-800 bg-white/90 ring-pink-100">Contact Us</SectionBadge>
+                <h2 className="mt-5 text-4xl font-black tracking-tight text-slate-900">Let’s connect</h2>
                 <p className="mt-4 leading-8 text-slate-600">
-                  Looking to book classes, ask about pricing, or discuss a school partnership? We’d love to hear from you.
+                  Looking to book classes, ask about pricing, or discuss a school partnership? We’d love to hear from
+                  you.
                 </p>
 
                 <div className="mt-8 space-y-4">
                   <div className="flex items-start gap-4 rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
-                    <Mail className="mt-1 h-5 w-5 text-emerald-600" />
+                    <Mail className="mt-1 h-5 w-5 text-emerald-700" />
                     <div>
-                      <div className="font-bold">Email</div>
+                      <div className="font-bold text-slate-900">Email</div>
                       <div className="text-slate-600">earthandomkids@gmail.com</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4 rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
-                    <Phone className="mt-1 h-5 w-5 text-emerald-600" />
+                    <Phone className="mt-1 h-5 w-5 text-emerald-700" />
                     <div>
-                      <div className="font-bold">Phone</div>
+                      <div className="font-bold text-slate-900">Phone</div>
                       <div className="text-slate-600">647-856-8206</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4 rounded-[1.5rem] bg-slate-50 p-4 ring-1 ring-slate-100">
-                    <MapPin className="mt-1 h-5 w-5 text-emerald-600" />
+                    <MapPin className="mt-1 h-5 w-5 text-emerald-700" />
                     <div>
-                      <div className="font-bold">Contact Person</div>
+                      <div className="font-bold text-slate-900">Contact Person</div>
                       <div className="text-slate-600">Taran Kaur</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-[2.5rem] bg-white/85 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.10)] ring-1 ring-white/60 backdrop-blur-sm lg:p-10">
+              <div className="rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] lg:p-10">
                 <form onSubmit={handleSubmit} className="grid gap-5 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-slate-700">Full Name</label>
@@ -1077,7 +1105,7 @@ export default function EarthAndOmKidsHomepage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="mt-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-7 py-3.5 font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl disabled:cursor-not-allowed disabled:opacity-70"
+                      className="mt-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-7 py-3.5 font-bold text-white shadow-[0_12px_30px_rgba(244,63,94,0.2)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(244,63,94,0.26)] disabled:cursor-not-allowed disabled:opacity-70"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Inquiry'}
                     </button>
@@ -1100,12 +1128,12 @@ export default function EarthAndOmKidsHomepage() {
           </div>
         </section>
 
-        <footer className="px-6 pb-10 pt-8 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-slate-900 px-8 py-10 text-slate-200 shadow-[0_20px_60px_rgba(15,23,42,0.24)] lg:px-10">
+        <footer className="px-4 pb-10 pt-8 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#0f1720] px-8 py-10 text-slate-200 shadow-[0_20px_60px_rgba(15,23,42,0.24)] lg:px-10">
             <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
               <div>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-sky-400 text-white shadow-lg">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-500 text-white shadow-lg">
                     <Flower2 className="h-6 w-6" />
                   </div>
                   <div>
@@ -1114,7 +1142,8 @@ export default function EarthAndOmKidsHomepage() {
                   </div>
                 </div>
                 <p className="mt-5 max-w-md leading-7 text-slate-400">
-                  Creating beautiful, playful, and calming yoga experiences for kids in schools, homes, and communities.
+                  Creating beautiful, playful, and calming yoga experiences for kids in schools, homes, and
+                  communities.
                 </p>
               </div>
 
@@ -1132,14 +1161,14 @@ export default function EarthAndOmKidsHomepage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white">Trusted Centres</h3>
-                <div className="mt-4 space-y-2 text-sm text-slate-400">
-                  <div>McNicoll Avenue Child Care Program</div>
-                  <div>Kids Connect Daycare</div>
-                  <div>Beach Hill Montessori</div>
-                  <div>Abacus Montessori</div>
-                  <div>LYCÉE FRANÇAIS TORONTO</div>
-                </div>
+                <h3 className="text-lg font-bold text-white">Services</h3>
+                <ul className="mt-4 space-y-3">
+                  {footerLinks.offerings.map((item) => (
+                    <li key={item} className="text-slate-400">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
